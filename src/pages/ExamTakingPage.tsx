@@ -50,9 +50,19 @@ export default function ExamTakingPage() {
   // Use useMemo to create shuffled questions without causing re-renders
   const questions = useMemo(() => {
     if (!exam) return []
+
+    // Helper to shuffle an array
+    const shuffleArray = <T,>(arr: T[]) =>
+      [...arr].sort(() => Math.random() - 0.5)
+
     return randomize
-      ? // eslint-disable-next-line react-hooks/purity
-        [...exam.questions].sort(() => Math.random() - 0.5)
+      ? exam.questions
+          .map((q) => ({
+            ...q,
+            options: shuffleArray(q.options), // shuffle the options
+          }))
+          // eslint-disable-next-line react-hooks/purity
+          .sort(() => Math.random() - 0.5) // shuffle the questions
       : exam.questions
   }, [exam, randomize])
 
@@ -339,7 +349,11 @@ export default function ExamTakingPage() {
                   }
 
                   return (
-                    <div key={option.id} className={optionClass}>
+                    <Label
+                      key={option.id}
+                      className={optionClass}
+                      htmlFor={`${currentQuestion.id}-${option.id}`}
+                    >
                       <Checkbox
                         id={`${currentQuestion.id}-${option.id}`}
                         checked={isSelected}
@@ -347,8 +361,7 @@ export default function ExamTakingPage() {
                         disabled={isSubmitted}
                         className="mt-0.5"
                       />
-                      <Label
-                        htmlFor={`${currentQuestion.id}-${option.id}`}
+                      <span
                         className={`flex-1 cursor-pointer text-sm sm:text-base ${
                           isSubmitted ? "cursor-default" : ""
                         }`}
@@ -360,8 +373,8 @@ export default function ExamTakingPage() {
                             (Correct answer)
                           </span>
                         )}
-                      </Label>
-                    </div>
+                      </span>
+                    </Label>
                   )
                 })}
               </div>
