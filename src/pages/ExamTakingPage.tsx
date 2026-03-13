@@ -366,7 +366,7 @@ export default function ExamTakingPage() {
                           isSubmitted ? "cursor-default" : ""
                         }`}
                       >
-                        <span className="mr-2 font-medium">{option.id}.</span>
+                        {/* <span className="mr-2 font-medium">{option.id}.</span> */}
                         <span className="wrap-break-word">{option.text}</span>
                         {isSubmitted && isCorrect && (
                           <span className="ml-2 block text-xs font-medium text-green-600 sm:inline">
@@ -420,7 +420,7 @@ export default function ExamTakingPage() {
                           isSubmitted ? "cursor-default" : ""
                         }`}
                       >
-                        <span className="mr-2 font-medium">{option.id}.</span>
+                        {/* <span className="mr-2 font-medium">{option.id}.</span> */}
                         <span className="wrap-break-word">{option.text}</span>
                         {isSubmitted && isCorrect && (
                           <span className="ml-2 block text-xs font-medium text-green-600 sm:inline">
