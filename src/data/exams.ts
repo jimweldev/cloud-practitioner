@@ -17096,7 +17096,7 @@ export const exams: Exam[] = [
   },
   {
     id: "exam24",
-    title: "Practice Exam 1",
+    title: "Practice Exam 24",
     questions: [
       {
         id: 1,
