@@ -17196,6 +17196,38 @@ export const exams: Exam[] = [
         },
       },
       {
+        id: 4,
+        question:
+          "Which AWS service can be used to automate code deployment to Amazon Elastic Compute Cloud (Amazon EC2) instances as well as on-premises instances?",
+        options: [
+          { id: "A", text: "AWS CodeDeploy" },
+          { id: "B", text: "AWS CodeCommit" },
+          { id: "C", text: "AWS CloudFormation" },
+          { id: "D", text: "AWS CodePipeline" },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS CodeCommit is a real service but it's a source control repository (like Git), not a deployment automation service.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS CloudFormation is a real service but it's Infrastructure as Code (IaC) for provisioning resources, not specifically for deploying application code to instances.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS CodePipeline is a real service but it's a CI/CD orchestration service. CodeDeploy is the service that actually performs the deployment to EC2 and on-premises.",
+          },
+        },
+      },
+      {
         id: 5,
         question:
           "AWS Compute Optimizer delivers recommendations for which of the following AWS resources? (Select two)",
@@ -17244,6 +17276,196 @@ export const exams: Exam[] = [
         },
       },
       {
+        id: 6,
+        question:
+          "AWS Organizations provides which of the following benefits? (Select two)",
+        options: [
+          {
+            id: "A",
+            text: "Check vulnerabilities on Amazon EC2 instances across the member AWS accounts",
+          },
+          {
+            id: "B",
+            text: "Deploy patches on Amazon EC2 instances across the member AWS accounts",
+          },
+          {
+            id: "C",
+            text: "Volume discounts for Amazon EC2 and Amazon S3 aggregated across the member AWS accounts",
+          },
+          {
+            id: "D",
+            text: "Provision Amazon EC2 Spot instances across the member AWS accounts",
+          },
+          {
+            id: "E",
+            text: "Share the reserved Amazon EC2 instances amongst the member AWS accounts",
+          },
+        ],
+        correct: ["C", "E"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Organizations does NOT check vulnerabilities. That's the job of Amazon Inspector or AWS Security Hub.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Organizations does NOT deploy patches. That's the job of AWS Systems Manager Patch Manager.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Organizations does NOT provision Spot instances. That's done through EC2 directly or Auto Scaling.",
+          },
+        },
+      },
+      {
+        id: 7,
+        question:
+          "Which pillar of the AWS Well-Architected Framework recommends maintaining infrastructure as code (IaC)?",
+        options: [
+          { id: "A", text: "Security" },
+          { id: "B", text: "Operational Excellence" },
+          { id: "C", text: "Performance Efficiency" },
+          { id: "D", text: "Cost Optimization" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Security pillar focuses on protecting data and systems. IaC is an Operational Excellence best practice.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Performance Efficiency focuses on using resources efficiently. IaC is an Operational Excellence best practice.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Cost Optimization focuses on reducing costs. IaC is an Operational Excellence best practice.",
+          },
+        },
+      },
+      {
+        id: 8,
+        question:
+          "Which of the following are correct statements regarding the AWS Shared Responsibility Model? (Select two)",
+        options: [
+          {
+            id: "A",
+            text: "For abstracted services like Amazon S3, AWS operates the infrastructure layer, the operating system, and platforms",
+          },
+          {
+            id: "B",
+            text: "AWS is responsible for training AWS and customer employees on AWS products and services",
+          },
+          {
+            id: "C",
+            text: "Configuration Management is the responsibility of the customer",
+          },
+          { id: "D", text: "AWS is responsible for Security 'of' the Cloud" },
+          {
+            id: "E",
+            text: "For a service like Amazon EC2, that falls under Infrastructure as a Service (IaaS), AWS is responsible for maintaining guest operating system",
+          },
+        ],
+        correct: ["A", "D"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS provides training resources but is NOT responsible for training customer employees. That's the customer's responsibility.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Configuration Management is a SHARED responsibility, not solely the customer's. AWS manages infrastructure config; customer manages their resource config.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is incorrect. For IaaS like EC2, the customer is responsible for the guest OS, not AWS.",
+          },
+        },
+      },
+      {
+        id: 9,
+        question:
+          "An organization deploys its IT infrastructure in a combination of its on-premises data center along with AWS Cloud. How would you categorize this deployment model?",
+        options: [
+          { id: "A", text: "Cloud deployment" },
+          { id: "B", text: "Private deployment" },
+          { id: "C", text: "Mixed deployment" },
+          { id: "D", text: "Hybrid deployment" },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Cloud deployment refers to 100% in the cloud, not a mix of on-premises and cloud.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Private deployment refers to on-premises or private cloud only, not a mix.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "'Mixed deployment' is not the standard AWS terminology. The correct term is 'Hybrid deployment'.",
+          },
+        },
+      },
+      {
+        id: 10,
+        question:
+          "Which of the following AWS services have data encryption automatically enabled? (Select two)?",
+        options: [
+          { id: "A", text: "Amazon Simple Storage Service (Amazon S3)" },
+          { id: "B", text: "Amazon Elastic File System (Amazon EFS)" },
+          { id: "C", text: "Amazon Redshift" },
+          { id: "D", text: "Amazon Elastic Block Store (Amazon EBS)" },
+          { id: "E", text: "AWS Storage Gateway" },
+        ],
+        correct: ["A", "E"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon EFS does NOT have encryption automatically enabled. You must explicitly enable encryption at rest.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon Redshift does NOT have encryption automatically enabled. You must enable it when creating the cluster.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon EBS does NOT have encryption automatically enabled by default (though it can be configured as default at the account level).",
+          },
+        },
+      },
+      {
         id: 11,
         question:
           "An IT company is on a cost-optimization spree and wants to identify all Amazon Elastic Compute Cloud (Amazon EC2) instances that are under-utilized. Which AWS services can be used off-the-shelf to address this use-case without needing any manual configurations? (Select two)",
@@ -17260,19 +17482,225 @@ export const exams: Exam[] = [
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "AWS Budgets is a real service but it tracks spending thresholds, not under-utilized EC2 instances.",
+              "AWS Budgets tracks spending thresholds, not under-utilized EC2 instances.",
           },
           B: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "Amazon CloudWatch is a real service but it requires manual configuration of metrics/alarms. The question specifies 'without manual configurations'.",
+              "Amazon CloudWatch requires manual configuration of metrics/alarms. The question specifies 'without manual configurations'.",
           },
           D: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "AWS Cost & Usage Report is a real service but it provides raw data that requires manual analysis, not off-the-shelf recommendations.",
+              "AWS Cost & Usage Report provides raw data that requires manual analysis, not off-the-shelf recommendations.",
+          },
+        },
+      },
+      {
+        id: 12,
+        question:
+          "Which of the following are the serverless computing services offered by AWS ? (Select two)",
+        options: [
+          { id: "A", text: "AWS Lambda" },
+          { id: "B", text: "Amazon Elastic Compute Cloud (Amazon EC2)" },
+          { id: "C", text: "AWS Elastic Beanstalk" },
+          { id: "D", text: "AWS Fargate" },
+          { id: "E", text: "Amazon Lightsail" },
+        ],
+        correct: ["A", "D"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon EC2 is NOT serverless. It requires provisioning and managing servers (virtual machines).",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Elastic Beanstalk is a PaaS that runs on EC2 underneath. It's not serverless; you still have underlying servers.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon Lightsail is a simplified VPS service with fixed monthly pricing, but it still runs on servers.",
+          },
+        },
+      },
+      {
+        id: 13,
+        question:
+          "An e-commerce company wants to store data from a recommendation engine in a database. As a Cloud Practioner, which AWS service would you recommend to provide this functionality with the LEAST operational overhead for any scale?",
+        options: [
+          { id: "A", text: "Amazon Relational Database Service (Amazon RDS)" },
+          { id: "B", text: "Amazon Simple Storage Service (Amazon S3)" },
+          { id: "C", text: "Amazon Neptune" },
+          { id: "D", text: "Amazon DynamoDB" },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon RDS is managed but requires capacity planning and schema design. DynamoDB offers more seamless scaling for recommendation engine data.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon S3 is object storage, not a database. Recommendation engines need query capabilities.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon Neptune is a graph database, which may be suitable for some recommendation engines, but DynamoDB offers lower operational overhead for general recommendation data.",
+          },
+        },
+      },
+      {
+        id: 14,
+        question:
+          "A medical device company is looking for a durable and cost-effective way of storing their historic data. Due to compliance requirements, the data must be stored for 10 years. Which AWS Storage solution will you suggest?",
+        options: [
+          { id: "A", text: "Amazon Elastic File System (Amazon EFS)" },
+          { id: "B", text: "Amazon S3 Glacier Flexible Retrieval" },
+          { id: "C", text: "AWS Storage Gateway" },
+          { id: "D", text: "Amazon S3 Glacier Deep Archive" },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon EFS is for active file storage, not long-term archival. It's more expensive for 10-year retention.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "S3 Glacier Flexible Retrieval is for archives with retrieval in minutes to hours. Glacier Deep Archive is cheaper for 10-year storage.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Storage Gateway is for hybrid cloud storage, not long-term archival storage.",
+          },
+        },
+      },
+      {
+        id: 15,
+        question:
+          "Which of the following are the advantages of using the AWS Cloud? (Select TWO)",
+        options: [
+          { id: "A", text: "AWS is responsible for security in the cloud" },
+          { id: "B", text: "Increase speed and agility" },
+          { id: "C", text: "Trade operational expense for capital expense" },
+          { id: "D", text: "Limited scaling" },
+          { id: "E", text: "Stop guessing about capacity" },
+        ],
+        correct: ["B", "E"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is incorrect. AWS is responsible for security OF the cloud, not security IN the cloud (which is shared).",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is backwards. The cloud allows you to trade capital expense (CapEx) for operational expense (OpEx).",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Limited scaling is a disadvantage of on-premises, not an advantage of cloud.",
+          },
+        },
+      },
+      {
+        id: 16,
+        question:
+          "A unicorn startup is building an analytics application with support for a speech-based interface. The application will accept speech-based input from users and then convey results via speech. As a Cloud Practitioner, which solution would you recommend for the given use-case?",
+        options: [
+          {
+            id: "A",
+            text: "Use Amazon Polly to convert speech to text for downstream analysis. Then use Amazon Transcribe to convey the text results via speech",
+          },
+          {
+            id: "B",
+            text: "Use Amazon Transcribe to convert speech to text for downstream analysis. Then use Amazon Polly to convey the text results via speech",
+          },
+          {
+            id: "C",
+            text: "Use Amazon Translate to convert speech to text for downstream analysis. Then use Amazon Polly to convey the text results via speech",
+          },
+          {
+            id: "D",
+            text: "Use Amazon Polly to convert speech to text for downstream analysis. Then use Amazon Translate to convey the text results via speech",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Polly is text-to-speech, not speech-to-text. The order is reversed and services are misassigned.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon Translate is for language translation, not speech-to-text. Transcribe is the correct service for speech-to-text.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Polly is text-to-speech, not speech-to-text. Translate is for translation, not text-to-speech. Both services are wrong for both tasks.",
+          },
+        },
+      },
+      {
+        id: 17,
+        question:
+          "Which of the following Amazon S3 storage classes takes the most time to retrieve data (also known as first byte latency)?",
+        options: [
+          { id: "A", text: "Amazon S3 Intelligent-Tiering" },
+          { id: "B", text: "Amazon S3 Glacier Deep Archive" },
+          { id: "C", text: "Amazon S3 Standard" },
+          { id: "D", text: "Amazon S3 Glacier Flexible Retrieval" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "S3 Intelligent-Tiering has millisecond latency like Standard, not the longest retrieval time.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "S3 Standard has millisecond latency. It's the fastest, not the slowest.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "S3 Glacier Flexible Retrieval has retrieval times of minutes to hours, but Glacier Deep Archive has the longest (up to 12 hours).",
           },
         },
       },
@@ -17292,19 +17720,312 @@ export const exams: Exam[] = [
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "Amazon CloudWatch is a real service but it's for monitoring metrics, not specifically identifying unattached/underutilized EBS volumes.",
+              "Amazon CloudWatch is for monitoring metrics, not specifically identifying unattached/underutilized EBS volumes.",
           },
           C: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "Amazon Inspector is a real service but it's for security vulnerability assessments, not cost optimization or resource utilization analysis.",
+              "Amazon Inspector is for security vulnerability assessments, not cost optimization or resource utilization analysis.",
           },
           D: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "AWS Config is a real service but it tracks configuration compliance, not underutilized resources.",
+              "AWS Config tracks configuration compliance, not underutilized resources.",
+          },
+        },
+      },
+      {
+        id: 19,
+        question:
+          "Which of the following are the best practices when using AWS Organizations? (Select TWO)",
+        options: [
+          { id: "A", text: "Never use tags for billing" },
+          {
+            id: "B",
+            text: "Do not use AWS Organizations to automate AWS account creation",
+          },
+          { id: "C", text: "Disable AWS CloudTrail on several accounts" },
+          { id: "D", text: "Create AWS accounts per department" },
+          {
+            id: "E",
+            text: "Restrict account privileges using Service Control Policies (SCP)",
+          },
+        ],
+        correct: ["D", "E"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Tags are actually BEST PRACTICE for billing. This is the opposite of correct.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Organizations CAN and SHOULD be used to automate account creation via the API.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Disabling CloudTrail reduces visibility and security. It's a bad practice.",
+          },
+        },
+      },
+      {
+        id: 20,
+        question:
+          "Which of the following statements is the MOST accurate when describing AWS Elastic Beanstalk?",
+        options: [
+          {
+            id: "A",
+            text: "It is a Platform as a Service (PaaS) that allows you to deploy and scale web applications and services",
+          },
+          {
+            id: "B",
+            text: "It is a Platform as a Service (PaaS) that allows you to model and provision resources needed for an application",
+          },
+          {
+            id: "C",
+            text: "It is an Infrastructure as a Service (IaaS) that allows you to deploy and scale web applications and services",
+          },
+          {
+            id: "D",
+            text: "It is an Infrastructure as Code (IaC) that allows you to model and provision resources needed for an application",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Modeling and provisioning resources is CloudFormation's job, not Elastic Beanstalk's primary purpose.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Elastic Beanstalk is PaaS, not IaaS. IaaS would be EC2 directly.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Infrastructure as Code is CloudFormation, CDK, or Terraform. Elastic Beanstalk is PaaS.",
+          },
+        },
+      },
+      {
+        id: 21,
+        question:
+          "Which service gives a personalized view of the status of the AWS services that are part of your Cloud architecture so that you can quickly assess the impact on your business when AWS service(s) are experiencing issues?",
+        options: [
+          { id: "A", text: "AWS Health - Service Health Dashboard" },
+          { id: "B", text: "AWS Health - Your Account Health Dashboard" },
+          { id: "C", text: "Amazon Inspector" },
+          { id: "D", text: "Amazon CloudWatch" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Service Health Dashboard shows public status of AWS services globally, not personalized to YOUR account's resources.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon Inspector is for security assessments, not service health status.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CloudWatch monitors metrics, logs, and alarms, but doesn't give personalized AWS service health impact assessment.",
+          },
+        },
+      },
+      {
+        id: 22,
+        question:
+          "A Cloud Practitioner would like to get operational insights of its resources to quickly identify any issues that might impact applications using those resources. Which AWS service can help with this task?",
+        options: [
+          { id: "A", text: "AWS Trusted Advisor" },
+          { id: "B", text: "AWS Systems Manager" },
+          { id: "C", text: "AWS Health Dashboard - Your Account Health" },
+          { id: "D", text: "Amazon Inspector" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Trusted Advisor provides recommendations but not comprehensive operational insights and issue identification across resources.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Your Account Health Dashboard shows AWS service issues affecting your account, but not operational insights about your resources.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon Inspector is for security vulnerability assessments, not general operational insights.",
+          },
+        },
+      },
+      {
+        id: 23,
+        question:
+          "A corporation would like to simplify access management to multiple AWS accounts as well as facilitate AWS Single Sign-On (AWS SSO) access to its AWS accounts. As a Cloud Practitioner, which AWS service would you use for this task?",
+        options: [
+          { id: "A", text: "AWS IAM Identity Center" },
+          { id: "B", text: "AWS Command Line Interface (CLI)" },
+          { id: "C", text: "AWS Cognito" },
+          { id: "D", text: "AWS Identity and Access Management (AWS IAM)" },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS CLI is a command-line tool for interacting with AWS, not an access management service.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon Cognito is for customer identity management (like app users), not corporate employee SSO across AWS accounts.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "IAM is for managing access within a single account. IAM Identity Center (formerly AWS SSO) is for multi-account access management.",
+          },
+        },
+      },
+      {
+        id: 24,
+        question:
+          "A financial services enterprise plans to enable Multi-Factor Authentication (MFA) for its employees. For ease of travel, they prefer not to use any physical devices to implement Multi-Factor Authentication (MFA). Which of the below options is best suited for this use case?",
+        options: [
+          {
+            id: "A",
+            text: "Soft Token Multi-Factor Authentication (MFA) device",
+          },
+          { id: "B", text: "U2F security key" },
+          { id: "C", text: "Virtual Multi-Factor Authentication (MFA) device" },
+          {
+            id: "D",
+            text: "Hardware Multi-Factor Authentication (MFA) device",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: true,
+            isRealButWrongPurpose: false,
+            reason:
+              "'Soft Token MFA device' is not AWS's official terminology. AWS uses 'Virtual MFA device' for software-based MFA.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "U2F security key is a PHYSICAL device (USB key), which contradicts 'not use any physical devices'.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Hardware MFA device is a physical device (like a key fob), which contradicts 'not use any physical devices'.",
+          },
+        },
+      },
+      {
+        id: 25,
+        question:
+          "A company uses reserved EC2 instances across multiple units with each unit having its own AWS account. However, some of the units under-utilize their reserved instances while other units need more reserved instances. As a Cloud Practitioner, which of the following would you recommend as the most cost-optimal solution?",
+        options: [
+          {
+            id: "A",
+            text: "Use AWS Systems Manager to manage AWS accounts of all units and then share the reserved EC2 instances amongst all units",
+          },
+          {
+            id: "B",
+            text: "Use AWS Cost Explorer to manage AWS accounts of all units and then share the reserved EC2 instances amongst all units",
+          },
+          {
+            id: "C",
+            text: "Use AWS Organizations to manage AWS accounts of all units and then share the reserved EC2 instances amongst all units",
+          },
+          {
+            id: "D",
+            text: "Use AWS Trusted Advisor to manage AWS accounts of all units and then share the reserved EC2 instances amongst all units",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Systems Manager is for operational management, not account consolidation or RI sharing.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Cost Explorer is for analyzing costs, not managing accounts or sharing RIs.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Trusted Advisor provides recommendations, but doesn't manage accounts or enable RI sharing across accounts.",
+          },
+        },
+      },
+      {
+        id: 26,
+        question:
+          "The DevOps team at an e-commerce company is trying to debug performance issues for its serverless application built using a microservices architecture. As a Cloud Practitioner, which AWS service would you recommend addressing this use-case?",
+        options: [
+          { id: "A", text: "AWS CloudFormation" },
+          { id: "B", text: "Amazon Pinpoint" },
+          { id: "C", text: "AWS X-Ray" },
+          { id: "D", text: "AWS Trusted Advisor" },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CloudFormation is for infrastructure provisioning, not debugging performance issues.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon Pinpoint is for customer engagement and analytics, not debugging microservices.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Trusted Advisor provides best practice recommendations, not distributed tracing for debugging.",
           },
         },
       },
@@ -17324,19 +18045,262 @@ export const exams: Exam[] = [
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "This is a real cloud benefit but it refers to global deployment capability, not aggregated usage driving lower prices.",
+              "Go global in minutes refers to global deployment capability, not aggregated usage pricing.",
           },
           B: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "This is a real cloud benefit but it refers to CapEx vs OpEx shift, not the aggregated usage pricing advantage.",
+              "This refers to CapEx vs OpEx shift, not the aggregated usage pricing advantage.",
           },
           C: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "This is a real cloud benefit but it refers to rapid deployment, not the economies of scale pricing advantage.",
+              "Speed and agility refers to rapid deployment, not the economies of scale pricing advantage.",
+          },
+        },
+      },
+      {
+        id: 28,
+        question:
+          "A financial services company wants to ensure that its AWS account activity meets the governance, compliance and auditing norms. As a Cloud Practitioner, which AWS service would you recommend for this use-case?",
+        options: [
+          { id: "A", text: "AWS Trusted Advisor" },
+          { id: "B", text: "AWS Config" },
+          { id: "C", text: "AWS CloudTrail" },
+          { id: "D", text: "Amazon CloudWatch" },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Trusted Advisor provides recommendations but does NOT log account activity for auditing.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Config tracks resource configuration changes, but CloudTrail logs API activity for governance and auditing.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CloudWatch monitors metrics and logs, but doesn't provide the API call history needed for auditing.",
+          },
+        },
+      },
+      {
+        id: 29,
+        question:
+          "An intern at an IT company provisioned a Linux based On-demand EC2 instance with per-second billing but terminated it within 30 seconds as he wanted to provision another instance type. What is the duration for which the instance would be charged?",
+        options: [
+          { id: "A", text: "600 seconds" },
+          { id: "B", text: "300 seconds" },
+          { id: "C", text: "60 seconds" },
+          { id: "D", text: "30 seconds" },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "600 seconds (10 minutes) is incorrect. Minimum charge is 60 seconds.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "300 seconds (5 minutes) is incorrect. Minimum charge is 60 seconds.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "30 seconds is what it ran, but per-second billing has a 60-second minimum for Linux instances.",
+          },
+        },
+      },
+      {
+        id: 30,
+        question:
+          "A company would like to separate cost for AWS services by the department for cost allocation. Which of the following is the simplest way to achieve this task?",
+        options: [
+          { id: "A", text: "Create tags for each department" },
+          {
+            id: "B",
+            text: "Create one account for all departments and share this account",
+          },
+          {
+            id: "C",
+            text: "Create different accounts for different departments",
+          },
+          {
+            id: "D",
+            text: "Create different virtual private cloud (VPCs) for different departments",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "One account for all departments makes cost separation HARDER, not easier.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Multiple accounts works but is NOT the simplest way. Tags are simpler.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason: "VPCs are for network isolation, not cost allocation.",
+          },
+        },
+      },
+      {
+        id: 31,
+        question:
+          "A photo sharing web application wants to store thumbnails of user-uploaded images on Amazon Simple Storage Service (Amazon S3). The thumbnails are rarely used but need to be immediately accessible from the web application. The thumbnails can be regenerated easily if they are lost. Which is the most cost-effective way to store these thumbnails on Amazon Simple Storage Service (Amazon S3)?",
+        options: [
+          {
+            id: "A",
+            text: "Use Amazon S3 Standard-Infrequent Access (S3 Standard-IA) to store the thumbnails",
+          },
+          { id: "B", text: "Use Amazon S3 Standard to store the thumbnails" },
+          {
+            id: "C",
+            text: "Use Amazon S3 Glacier Flexible Retrieval to store the thumbnails",
+          },
+          {
+            id: "D",
+            text: "Use Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA) to store the thumbnails",
+          },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Standard-IA is more expensive than One Zone-IA and offers multi-AZ durability, which isn't needed since thumbnails can be regenerated.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "S3 Standard is the most expensive storage class, not cost-effective for rarely accessed data.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Glacier Flexible Retrieval has retrieval delays (minutes to hours), but thumbnails need immediate accessibility.",
+          },
+        },
+      },
+      {
+        id: 32,
+        question:
+          "A data analytics company is running a proprietary batch analytics application on AWS and wants to use a storage service which would be accessed by hundreds of EC2 instances simultaneously to append data to existing files. As a Cloud Practitioner, which AWS service would you suggest for this use-case?",
+        options: [
+          { id: "A", text: "Instance Store" },
+          { id: "B", text: "Amazon Elastic Block Store (Amazon EBS)" },
+          { id: "C", text: "Amazon Elastic File System (Amazon EFS)" },
+          { id: "D", text: "Amazon Simple Storage Service (Amazon S3)" },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Instance Store is ephemeral and tied to a single instance. It cannot be accessed by hundreds of EC2 instances simultaneously.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "EBS volumes can only be attached to one EC2 instance at a time (except in specific cluster configurations).",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "S3 is object storage, not a file system. It doesn't support appending to existing files efficiently.",
+          },
+        },
+      },
+      {
+        id: 33,
+        question:
+          "Which of the following AWS services offer block-level storage? (Select two)",
+        options: [
+          { id: "A", text: "Amazon Elastic Container Service (Amazon ECS)" },
+          { id: "B", text: "Instance Store" },
+          { id: "C", text: "Amazon Simple Storage Service (Amazon S3)" },
+          { id: "D", text: "Amazon Elastic Block Store (Amazon EBS)" },
+          { id: "E", text: "Amazon Elastic File System (Amazon EFS)" },
+        ],
+        correct: ["B", "D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon ECS is a container orchestration service, not a storage service.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason: "S3 is object storage, not block-level storage.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason: "EFS is file-level storage (NFS), not block-level storage.",
+          },
+        },
+      },
+      {
+        id: 34,
+        question:
+          "A company wants to improve the resiliency of its flagship application so it wants to move from its traditional database system to a managed AWS NoSQL database service to support active-active configuration in both the East and West US AWS regions. The active-active configuration with cross-region support is the prime criteria for any database solution that the company considers. Which AWS database service is the right fit for this requirement?",
+        options: [
+          { id: "A", text: "Amazon Aurora with multi-master clusters" },
+          { id: "B", text: "Amazon DynamoDB with DynamoDB Accelerator" },
+          { id: "C", text: "Amazon DynamoDB with global tables" },
+          {
+            id: "D",
+            text: "Amazon Relational Database Service (Amazon RDS) for MYSQL",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Aurora is relational (SQL), not NoSQL. The question specifies a NoSQL database.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "DynamoDB Accelerator (DAX) is for in-memory caching, not cross-region active-active replication.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "RDS is relational (SQL) and doesn't support active-active cross-region NoSQL.",
           },
         },
       },
@@ -17355,19 +18319,331 @@ export const exams: Exam[] = [
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "AWS Elastic Beanstalk is a real service but it's a PaaS for deploying applications. While it CAN run containers, it's not primarily classified as a 'container service'.",
+              "Elastic Beanstalk is PaaS for deploying applications. While it CAN run containers, it's not primarily a 'container service'.",
           },
           C: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "Amazon SageMaker is a real service but it's a machine learning platform, not a container service.",
+              "SageMaker is a machine learning platform, not a container service.",
           },
           D: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "Amazon SNS is a real service but it's a messaging/notification service, not a container service.",
+              "SNS is a messaging/notification service, not a container service.",
+          },
+        },
+      },
+      {
+        id: 36,
+        question:
+          "Due to regulatory and compliance reasons, an organization is supposed to use a hardware device for any data encryption operations in the cloud. Which AWS service can be used to meet this compliance requirement?",
+        options: [
+          { id: "A", text: "AWS Trusted Advisor" },
+          { id: "B", text: "AWS Key Management Service (AWS KMS)" },
+          { id: "C", text: "AWS CloudHSM" },
+          { id: "D", text: "AWS Secrets Manager" },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Trusted Advisor is for best practice recommendations, not encryption hardware.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "KMS uses FIPS-validated software, but CloudHSM provides dedicated hardware security modules (HSM).",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Secrets Manager manages secrets like database passwords, not hardware-based encryption.",
+          },
+        },
+      },
+      {
+        id: 37,
+        question:
+          "What is the primary benefit of deploying an Amazon Relational Database Service (Amazon RDS) database in a Read Replica configuration?",
+        options: [
+          { id: "A", text: "Read Replica improves database scalability" },
+          { id: "B", text: "Read Replica enhances database availability" },
+          {
+            id: "C",
+            text: "Read Replica protects the database from a regional failure",
+          },
+          { id: "D", text: "Read Replica reduces database usage costs" },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Availability is enhanced by Multi-AZ deployments, not Read Replicas (though they can help with failover).",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Cross-Region Read Replicas can help with regional failure, but that's not the PRIMARY benefit.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Read Replicas add cost (additional instances), they don't reduce costs.",
+          },
+        },
+      },
+      {
+        id: 38,
+        question: "What is the primary use case for Amazon GuardDuty?",
+        options: [
+          {
+            id: "A",
+            text: "Encrypting data in transit between AWS services using TLS certificates.",
+          },
+          {
+            id: "B",
+            text: "Protecting web applications from common exploits and vulnerabilities such as SQL injection",
+          },
+          {
+            id: "C",
+            text: "Enforcing secure communication between VPCs using network traffic filtering",
+          },
+          {
+            id: "D",
+            text: "Detecting malicious activity and threats in your AWS accounts and workloads",
+          },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "TLS encryption is handled by services like ACM or ELB, not GuardDuty.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "WAF protects against SQL injection and exploits, not GuardDuty.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Network traffic filtering is done by Security Groups, NACLs, or Network Firewall, not GuardDuty.",
+          },
+        },
+      },
+      {
+        id: 39,
+        question:
+          "Which of the following AWS authentication mechanisms supports an AWS Multi-Factor Authentication (AWS MFA) device that you can plug into a USB port on your computer?",
+        options: [
+          {
+            id: "A",
+            text: "Hardware Multi-Factor Authentication (AWS MFA) device",
+          },
+          {
+            id: "B",
+            text: "SMS text message-based Multi-Factor Authentication (AWS MFA)",
+          },
+          { id: "C", text: "U2F security key" },
+          {
+            id: "D",
+            text: "Virtual Multi-Factor Authentication (AWS MFA) device",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Hardware MFA devices are usually key fobs (like Gemalto), not USB plug-in devices.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason: "SMS-based MFA uses text messages, not USB devices.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Virtual MFA devices are software apps on phones (like Google Authenticator), not USB devices.",
+          },
+        },
+      },
+      {
+        id: 40,
+        question:
+          "A financial services company wants to migrate from its on-premises data center to AWS Cloud. As a Cloud Practitioner, which AWS service would you recommend so that the company can compare the cost of running their IT infrastructure on-premises vs AWS Cloud?",
+        options: [
+          { id: "A", text: "AWS Trusted Advisor" },
+          { id: "B", text: "AWS Budgets" },
+          { id: "C", text: "AWS Cost Explorer" },
+          { id: "D", text: "AWS Pricing Calculator" },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Trusted Advisor provides optimization recommendations, not cost comparison between on-premises and AWS.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Budgets tracks spending against thresholds, not TCO comparison.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Cost Explorer shows historical AWS costs, not comparison with on-premises. Use TCO Calculator or Pricing Calculator for comparison.",
+          },
+        },
+      },
+      {
+        id: 41,
+        question:
+          "An organization maintains a separate Virtual Private Cloud (VPC) for each of its business units. Two units need to privately share data. Which is the most optimal way of privately sharing data between the two VPCs?",
+        options: [
+          { id: "A", text: "AWS Direct Connect" },
+          { id: "B", text: "VPC peering connection" },
+          { id: "C", text: "VPC Endpoint" },
+          { id: "D", text: "AWS Site-to-Site VPN" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Direct Connect connects on-premises to AWS, not VPC to VPC within AWS.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "VPC Endpoints connect VPCs to AWS services privately, not VPC-to-VPC.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Site-to-Site VPN connects on-premises to AWS, not VPC-to-VPC. VPC Peering is simpler for this use case.",
+          },
+        },
+      },
+      {
+        id: 42,
+        question:
+          "A multi-national corporation wants to get expert professional advice on migrating to AWS and managing their applications on AWS Cloud. Which of the following entities would you recommend for this engagement?",
+        options: [
+          { id: "A", text: "APN Technology Partner" },
+          { id: "B", text: "APN Consulting Partner" },
+          { id: "C", text: "Concierge Support Team" },
+          { id: "D", text: "AWS Trusted Advisor" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "APN Technology Partners provide software/hardware solutions that integrate with AWS, not migration consulting services.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Concierge Support Team helps with billing and account questions (Enterprise Support only), not migration consulting.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Trusted Advisor is an automated tool, not a professional consulting service.",
+          },
+        },
+      },
+      {
+        id: 43,
+        question:
+          "A company's flagship application runs on a fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances. As per the new policies, the system administrators are looking for the best way to provide secure shell access to Amazon Elastic Compute Cloud (Amazon EC2) instances without opening new ports or using public IP addresses. Which tool/service will help you achieve this requirement?",
+        options: [
+          {
+            id: "A",
+            text: "Amazon Elastic Compute Cloud (Amazon EC2) Instance Connect",
+          },
+          { id: "B", text: "Amazon Route 53" },
+          { id: "C", text: "Amazon Inspector" },
+          { id: "D", text: "AWS Systems Manager Session Manager" },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "EC2 Instance Connect still requires SSH access and public IPs or a bastion host.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason: "Route 53 is DNS service, not for SSH access.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon Inspector is for security assessments, not remote access.",
+          },
+        },
+      },
+      {
+        id: 44,
+        question:
+          "Multi-AZ deployment is an example of which of the following?",
+        options: [
+          { id: "A", text: "Scale out" },
+          { id: "B", text: "High Availability" },
+          { id: "C", text: "Performance Efficiency" },
+          { id: "D", text: "Scale up" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Scale out refers to adding more instances, not Multi-AZ for fault tolerance.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Performance Efficiency is about using resources optimally, not Multi-AZ availability.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Scale up refers to using larger instances, not Multi-AZ deployment.",
           },
         },
       },
@@ -17387,19 +18663,424 @@ export const exams: Exam[] = [
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "AWS CodeDeploy is a real service but it deploys YOUR code, not pre-built popular technology solutions.",
+              "CodeDeploy deploys YOUR code, not pre-built popular technology solutions.",
           },
           C: {
             isFakeService: false,
             isRealButWrongPurpose: true,
-            reason:
-              "AWS Whitepapers are real but they are documentation, not a deployment tool.",
+            reason: "Whitepapers are documentation, not a deployment tool.",
           },
           D: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "AWS Forums are real but they are community discussion platforms, not a deployment tool.",
+              "Forums are community discussion platforms, not a deployment tool.",
+          },
+        },
+      },
+      {
+        id: 46,
+        question:
+          "Which of the following AWS services are always free to use (Select two)?",
+        options: [
+          { id: "A", text: "Amazon Elastic Compute Cloud (Amazon EC2)" },
+          { id: "B", text: "Amazon Simple Storage Service (Amazon S3)" },
+          { id: "C", text: "Amazon DynamoDB" },
+          { id: "D", text: "AWS Identity and Access Management (AWS IAM)" },
+          { id: "E", text: "AWS Auto Scaling" },
+        ],
+        correct: ["D", "E"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "EC2 charges for instances. Only free tier offers limited free usage, not always free.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "S3 charges for storage, requests, and data transfer. Only free tier offers limited free usage.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "DynamoDB charges for read/write capacity and storage. Only free tier offers limited free usage.",
+          },
+        },
+      },
+      {
+        id: 47,
+        question:
+          "A silicon valley based healthcare startup stores anonymized patient health data on Amazon S3. The CTO further wants to ensure that any sensitive data on S3 is discovered and identified to prevent any sensitive data leaks. As a Cloud Practitioner, which AWS service would you recommend addressing this use-case?",
+        options: [
+          { id: "A", text: "AWS Glue" },
+          { id: "B", text: "Amazon Macie" },
+          { id: "C", text: "AWS Secrets Manager" },
+          { id: "D", text: "Amazon Polly" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Glue is for ETL and data cataloging, not sensitive data discovery.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Secrets Manager stores secrets like database passwords, it doesn't discover sensitive data in S3.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason: "Amazon Polly is text-to-speech, not data discovery.",
+          },
+        },
+      },
+      {
+        id: 48,
+        question:
+          "Which AWS Route 53 routing policy would you use to route traffic to multiple resources and also choose how much traffic is routed to each resource?",
+        options: [
+          { id: "A", text: "latency-based routing" },
+          { id: "B", text: "Weighted routing" },
+          { id: "C", text: "Failover routing" },
+          { id: "D", text: "Simple routing" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Latency-based routing routes to the lowest latency region, not by specified weights.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Failover routing routes to a primary, then secondary on failure, not weighted distribution.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Simple routing routes to one resource without control over traffic distribution.",
+          },
+        },
+      },
+      {
+        id: 49,
+        question:
+          "Which of the following AWS services can be used to forecast your AWS account usage and costs?",
+        options: [
+          { id: "A", text: "AWS Pricing Calculator" },
+          { id: "B", text: "AWS Budgets" },
+          { id: "C", text: "AWS Cost & Usage Report (AWS CUR)" },
+          { id: "D", text: "AWS Cost Explorer" },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Pricing Calculator estimates costs BEFORE you use services, it doesn't forecast based on historical usage.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Budgets alerts on thresholds but doesn't provide forecasting of usage and costs.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CUR provides detailed billing data but doesn't forecast future usage.",
+          },
+        },
+      },
+      {
+        id: 50,
+        question:
+          "Which option is a common stakeholder role for the AWS Cloud Adoption Framework (AWS CAF) platform perspective? (Select two)",
+        options: [
+          { id: "A", text: "Chief Data Officer (CDO)" },
+          { id: "B", text: "Chief Information Officer (CIO)" },
+          { id: "C", text: "Chief Product Officer (CPO)" },
+          { id: "D", text: "Chief Technology Officer (CTO)" },
+          { id: "E", text: "Engineer" },
+        ],
+        correct: ["D", "E"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CDO is associated with the Data perspective, not Platform.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CIO is associated with the Business or Governance perspectives, not primarily Platform.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CPO is associated with the Product perspective, not Platform.",
+          },
+        },
+      },
+      {
+        id: 51,
+        question:
+          "A Cloud Practitioner would like to deploy identical resources across all AWS regions and accounts using templates while estimating costs. Which AWS service can assist with this task?",
+        options: [
+          { id: "A", text: "AWS CodeDeploy" },
+          { id: "B", text: "AWS CloudFormation" },
+          {
+            id: "C",
+            text: "AWS Directory Service for Microsoft Active Directory (AWS Managed Microsoft AD)",
+          },
+          { id: "D", text: "Amazon LightSail" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CodeDeploy deploys code to instances, not infrastructure templates across accounts/regions.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Directory Service is for identity management, not infrastructure deployment.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Lightsail is a simplified VPS service, not for multi-region/account infrastructure templates.",
+          },
+        },
+      },
+      {
+        id: 52,
+        question:
+          "Which AWS service will you use to provision the same AWS infrastructure across multiple AWS accounts and regions?",
+        options: [
+          { id: "A", text: "AWS Systems Manager" },
+          { id: "B", text: "AWS CodeDeploy" },
+          { id: "C", text: "AWS Config" },
+          { id: "D", text: "AWS CloudFormation" },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Systems Manager is for operational management, not infrastructure provisioning templates.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason: "CodeDeploy deploys application code, not infrastructure.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Config tracks configuration compliance, it doesn't provision resources.",
+          },
+        },
+      },
+      {
+        id: 53,
+        question:
+          "Which of the following options is NOT a feature of Amazon Inspector?",
+        options: [
+          { id: "A", text: "Track configuration changes" },
+          {
+            id: "B",
+            text: "Inspect running operating systems (OS) against known vulnerabilities",
+          },
+          { id: "C", text: "Automate security assessments" },
+          { id: "D", text: "Analyze against unintended network accessibility" },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This IS a feature of Inspector (CVE assessment). The question asks for what is NOT a feature.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This IS a feature of Inspector. The question asks for what is NOT a feature.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This IS a feature of Inspector (network reachability). The question asks for what is NOT a feature.",
+          },
+        },
+      },
+      {
+        id: 54,
+        question:
+          "A startup runs its proprietary application on docker containers. As a Cloud Practitioner, which AWS service would you recommend so that the startup can run containers and still have access to the underlying servers?",
+        options: [
+          { id: "A", text: "AWS Fargate" },
+          { id: "B", text: "AWS Lambda" },
+          { id: "C", text: "Amazon Elastic Container Registry (Amazon ECR)" },
+          { id: "D", text: "Amazon Elastic Container Service (Amazon ECS)" },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Fargate is serverless - you do NOT have access to underlying servers.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Lambda is serverless functions, not containers, and no access to underlying servers.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "ECR is a container registry (storage), not a compute service to run containers.",
+          },
+        },
+      },
+      {
+        id: 55,
+        question:
+          "A startup wants to provision an EC2 instance for the lowest possible cost for a long-term duration but needs to make sure that the instance would never be interrupted. As a Cloud Practitioner, which of the following options would you recommend?",
+        options: [
+          { id: "A", text: "EC2 Spot Instance" },
+          { id: "B", text: "EC2 Dedicated Host" },
+          { id: "C", text: "EC2 On-Demand Instance" },
+          { id: "D", text: "EC2 Reserved Instance (RI)" },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Spot instances are low-cost but CAN be interrupted with 2-minute notice.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Dedicated Hosts are for physical isolation, not the lowest cost option.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "On-Demand is the most flexible but NOT the lowest cost for long-term usage.",
+          },
+        },
+      },
+      {
+        id: 56,
+        question:
+          "An AWS user is trying to launch an Amazon Elastic Compute Cloud (Amazon EC2) instance in a given region. What is the region-specific constraint that the Amazon Machine Image (AMI) must meet so that it can be used for this Amazon Elastic Compute Cloud (Amazon EC2) instance?",
+        options: [
+          {
+            id: "A",
+            text: "An Amazon Machine Image (AMI) is a global entity, so the region is not applicable",
+          },
+          {
+            id: "B",
+            text: "You must use an Amazon Machine Image (AMI) from the same region as that of the Amazon EC2 instance. The region of the Amazon Machine Image (AMI) has no bearing on the performance of the Amazon EC2 instance",
+          },
+          {
+            id: "C",
+            text: "You should use an Amazon Machine Image (AMI) from the same region, as it improves the performance of the Amazon EC2 instance",
+          },
+          {
+            id: "D",
+            text: "You can use an Amazon Machine Image (AMI) from a different region, but it degrades the performance of the Amazon EC2 instance",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AMIs are region-specific, not global. They must be copied to other regions to use there.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Using same region is required, but not for performance reasons - AMIs are region-specific.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "You cannot use an AMI from a different region without copying it first. Performance is not the issue.",
+          },
+        },
+      },
+      {
+        id: 57,
+        question:
+          "A company would like to optimize Amazon Elastic Compute Cloud (Amazon EC2) costs. Which of the following actions can help with this task? (Select TWO)",
+        options: [
+          {
+            id: "A",
+            text: "Set up Auto Scaling groups to align the number of instances with the demand",
+          },
+          { id: "B", text: "Vertically scale the EC2 instances" },
+          { id: "C", text: "Purchase Amazon EC2 Reserved instances (RIs)" },
+          { id: "D", text: "Opt for a higher AWS Support plan" },
+          { id: "E", text: "Build its own servers" },
+        ],
+        correct: ["A", "C"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Vertical scaling (bigger instances) usually increases costs, not optimizes them.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Higher Support plans cost more, they don't directly optimize EC2 costs.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Building own servers defeats the purpose of using AWS Cloud.",
           },
         },
       },
@@ -17419,19 +19100,200 @@ export const exams: Exam[] = [
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "Amazon Inspector is a real service that performs automated security assessments, but the question is asking about the POLICY that allows testing without approval, not the tool itself.",
+              "Inspector is a tool that performs assessments, but the question asks about the POLICY that allows testing without approval.",
           },
           C: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "Network Stress Testing is a real concept but it DOES require prior approval from AWS, unlike penetration testing.",
+              "Network Stress Testing DOES require prior approval from AWS, unlike penetration testing.",
           },
           D: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "AWS Secrets Manager is a real service but it's for managing secrets, not related to security assessment permissions.",
+              "Secrets Manager is for managing secrets, not related to security assessment permissions.",
+          },
+        },
+      },
+      {
+        id: 59,
+        question:
+          "Which of the following options are the benefits of using AWS Elastic Load Balancing (ELB)? (Select TWO)",
+        options: [
+          { id: "A", text: "Fault tolerance" },
+          { id: "B", text: "Less costly" },
+          { id: "C", text: "Storage" },
+          { id: "D", text: "Agility" },
+          { id: "E", text: "High availability" },
+        ],
+        correct: ["A", "E"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "ELB adds cost (it's an additional service), it doesn't reduce costs.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason: "ELB does NOT provide storage. It distributes traffic.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Agility is a general cloud benefit, not a specific ELB benefit.",
+          },
+        },
+      },
+      {
+        id: 60,
+        question:
+          "What is the primary benefit of deploying an Amazon RDS Multi-AZ database with one standby?",
+        options: [
+          {
+            id: "A",
+            text: "Amazon RDS Multi-AZ improves database performance for read-heavy workloads",
+          },
+          {
+            id: "B",
+            text: "Amazon RDS Multi-AZ enhances database availability",
+          },
+          { id: "C", text: "Amazon RDS Multi-AZ reduces database usage costs" },
+          {
+            id: "D",
+            text: "Amazon RDS Multi-AZ protects the database from a regional failure",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Read performance is improved by Read Replicas, not Multi-AZ.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Multi-AZ adds cost (a standby instance), it doesn't reduce costs.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Multi-AZ protects against AZ failure, not regional failure.",
+          },
+        },
+      },
+      {
+        id: 61,
+        question:
+          "Which entity ensures that your application on Amazon Elastic Compute Cloud (Amazon EC2) always has the right amount of capacity to handle the current traffic demand?",
+        options: [
+          { id: "A", text: "Amazon EC2 Auto Scaling" },
+          { id: "B", text: "Application Load Balancer" },
+          { id: "C", text: "Multi-AZ deployment" },
+          { id: "D", text: "Network Load Balancer" },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Load Balancers distribute traffic, they don't adjust capacity (number of instances).",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Multi-AZ provides availability, not automatic capacity adjustment.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Network Load Balancer distributes traffic, not adjust capacity.",
+          },
+        },
+      },
+      {
+        id: 62,
+        question:
+          "An IT company has a hybrid cloud architecture and it wants to centralize the server logs for its Amazon Elastic Compute Cloud (Amazon EC2) instances and on-premises servers. Which of the following is the MOST effective for this use-case?",
+        options: [
+          {
+            id: "A",
+            text: "Use AWS CloudTrail for the Amazon Elastic Compute Cloud (Amazon EC2) instance and Amazon CloudWatch Logs for the on-premises servers",
+          },
+          {
+            id: "B",
+            text: "Use AWS Lambda to send log data from Amazon Elastic Compute Cloud (Amazon EC2) instance as well as on-premises servers to Amazon CloudWatch Logs",
+          },
+          {
+            id: "C",
+            text: "Use Amazon CloudWatch Logs for both the Amazon Elastic Compute Cloud (Amazon EC2) instance and the on-premises servers",
+          },
+          {
+            id: "D",
+            text: "Use Amazon CloudWatch Logs for the Amazon Elastic Compute Cloud (Amazon EC2) instance and AWS CloudTrail for the on-premises servers",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CloudTrail logs API activity, not server logs. CloudWatch Logs can collect from both EC2 and on-premises.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "While possible, using Lambda adds complexity. The CloudWatch agent directly sends logs without Lambda.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CloudTrail is for API activity, not server logs. Both should use CloudWatch Logs.",
+          },
+        },
+      },
+      {
+        id: 63,
+        question:
+          "Which AWS service can be used to subscribe to an RSS feed to be notified of the status of all AWS service interruptions?",
+        options: [
+          { id: "A", text: "AWS Lambda" },
+          { id: "B", text: "AWS Health Dashboard - Service Health" },
+          { id: "C", text: "AWS Health Dashboard - Your Account Health" },
+          { id: "D", text: "Amazon Simple Notification Service (Amazon SNS)" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Lambda is for running code, not for subscribing to RSS feeds of service status.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Your Account Health Dashboard is personalized for your resources, not for all service interruptions globally.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "SNS is for notifications, but the RSS feed is provided by the Service Health Dashboard.",
           },
         },
       },
@@ -17451,19 +19313,64 @@ export const exams: Exam[] = [
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "AWS Edge Locations are for CloudFront CDN caching, not for running compute workloads close to users. They don't provide compute capacity for gameplay.",
+              "Edge Locations are for CloudFront CDN caching, not for running compute workloads close to users.",
           },
           C: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "AWS Wavelength is for 5G edge computing with carrier networks, which is more specialized than the general 'various locations' described.",
+              "Wavelength is for 5G edge computing with carrier networks, which is more specialized than 'various locations'.",
           },
           D: {
             isFakeService: false,
             isRealButWrongPurpose: true,
             reason:
-              "AWS Direct Connect is for private connectivity between on-premises and AWS, not for serving end-users with low latency.",
+              "Direct Connect is for private connectivity between on-premises and AWS, not for serving end-users.",
+          },
+        },
+      },
+      {
+        id: 65,
+        question:
+          "AWS Marketplace facilitates which of the following use-cases? (Select two)",
+        options: [
+          {
+            id: "A",
+            text: "Sell Software as a Service (SaaS) solutions to AWS customers",
+          },
+          {
+            id: "B",
+            text: "Raise request for purchasing AWS Direct Connect connection",
+          },
+          { id: "C", text: "Buy Amazon EC2 Standard Reserved Instances (RI)" },
+          {
+            id: "D",
+            text: "Purchase compliance documents from third-party vendors",
+          },
+          {
+            id: "E",
+            text: "AWS customer can buy software that has been bundled into customized Amazon Machine Image (AMIs) by the AWS Marketplace sellers",
+          },
+        ],
+        correct: ["A", "E"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Direct Connect connections are purchased through AWS Direct Connect console, not AWS Marketplace.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Reserved Instances are purchased through EC2 console, not AWS Marketplace.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Compliance documents are obtained through AWS Artifact, not AWS Marketplace.",
           },
         },
       },
