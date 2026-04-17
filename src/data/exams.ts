@@ -19376,4 +19376,2716 @@ export const exams: Exam[] = [
       },
     ],
   },
+  {
+    id: "exam25",
+    title: "Practice Exam 25",
+    questions: [
+      {
+        id: 1,
+        question:
+          "A media company runs its business on Amazon EC2 instances backed by Amazon S3 storage. The company is apprehensive about the consistent increase in costs incurred from S3 buckets. The company wants to make some decisions regarding data retention, storage, and deletion based on S3 usage and cost reports. As a CloudOps Engineer, you have been hired to develop a solution to track the costs incurred by each S3 bucket in the AWS account.\n\nHow will you configure this requirement?",
+        options: [
+          {
+            id: "A",
+            text: "Configure AWS Budgets to see the cost against each S3 bucket in the AWS account",
+          },
+          {
+            id: "B",
+            text: "Use AWS Simple Monthly Calculator to check the cost against each S3 bucket in your AWS account",
+          },
+          {
+            id: "C",
+            text: "Use AWS Trusted Advisor's rich set of best practice checks to configure cost utilization for individual S3 buckets. Trusted Advisor also provides recommendations based on the findings derived from analyzing your AWS cloud architecture",
+          },
+          {
+            id: "D",
+            text: "Add a common tag to each bucket. Activate the tag as a cost allocation tag. Use the AWS Cost Explorer to create a cost report for the tag",
+          },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Budgets is a real service, but it is used to set custom budgets and receive alerts, not to generate detailed cost reports per S3 bucket.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "The AWS Simple Monthly Calculator is a real tool, but it is for estimating future costs, not for tracking incurred costs per bucket.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Trusted Advisor is a real service, but its checks for S3 focus on security, logging, and versioning, not on generating cost reports.",
+          },
+        },
+      },
+      {
+        id: 2,
+        question:
+          "A startup uses Amazon S3 buckets for storing their customer data. The company has defined different retention periods for different objects present in their Amazon S3 buckets, based on the compliance requirements. But, the retention rules do not seem to work as expected.\n\nWhich of the following points are important to remember when configuring retention periods for objects in Amazon S3 buckets (Select two)?",
+        options: [
+          {
+            id: "A",
+            text: "When you apply a retention period to an object version explicitly, you specify a `Retain Until Date` for the object version",
+          },
+          {
+            id: "B",
+            text: "You cannot place a retention period on an object version through a bucket default setting",
+          },
+          {
+            id: "C",
+            text: "When you use bucket default settings, you specify a `Retain Until Date` for the object version",
+          },
+          {
+            id: "D",
+            text: "Different versions of a single object can have different retention modes and periods",
+          },
+          {
+            id: "E",
+            text: "The bucket default settings will override any explicit retention mode or period you request on an object version",
+          },
+        ],
+        correct: ["A", "D"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This statement is false. You can place a retention period on an object version either explicitly or through a bucket default setting.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This statement is false. When using bucket default settings, you specify a duration (in days or years), not a specific 'Retain Until Date'.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This statement is false. Explicit retention settings on an object override the bucket default settings, not the other way around.",
+          },
+        },
+      },
+      {
+        id: 3,
+        question:
+          "After a developer had mistakenly shutdown a test instance, the Team Lead has decided to configure termination protection on all the instances. As a CloudOps Engineer, you have been tasked to review the termination policy and check its viability for the given requirements.\n\nWhich of the following choices are correct about Amazon EC2 instance's termination policy (Select two)?",
+        options: [
+          {
+            id: "A",
+            text: "The `DisableApiTermination` attribute prevents you from terminating an instance by initiating shutdown from the instance",
+          },
+          {
+            id: "B",
+            text: "The `DisableApiTermination` attribute does not prevent you from terminating an instance by initiating shutdown from Amazon EC2 console",
+          },
+          {
+            id: "C",
+            text: "You can't enable termination protection for Spot Instances",
+          },
+          {
+            id: "D",
+            text: "To prevent instances that are part of an Auto Scaling group from terminating on scale in, use instance protection",
+          },
+          {
+            id: "E",
+            text: "The `DisableApiTermination` attribute prevents Amazon EC2 Auto Scaling from terminating an instance",
+          },
+        ],
+        correct: ["C", "D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This statement is false. The DisableApiTermination attribute does not prevent a shutdown initiated from within the instance (e.g., via the shutdown command).",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This statement is false. Enabling DisableApiTermination does prevent termination from the EC2 console, CLI, or API.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This statement is false. The DisableApiTermination attribute does not prevent an Auto Scaling group from terminating an instance as part of its scaling processes.",
+          },
+        },
+      },
+      {
+        id: 4,
+        question:
+          "A company is moving their on-premises technology infrastructure to AWS Cloud. Compliance rules and regulatory guidelines mandate the company to use its own software that needs socket level configurations. As the company is new to AWS Cloud, they have reached out to you for guidance on this requirement.\n\nAs an AWS Certified CloudOps Engineer, which option will you suggest for the given requirement?",
+        options: [
+          {
+            id: "A",
+            text: "Opt for On-Demand instances that are highly available and require no prior planning",
+          },
+          {
+            id: "B",
+            text: "Opt for Reserved Instances that allow you to plan and help install the necessary software",
+          },
+          { id: "C", text: "Opt for Amazon EC2 Dedicated Host" },
+          { id: "D", text: "Opt for Amazon EC2 Dedicated Instance" },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "On-Demand instances do not provide the required visibility or control over the underlying physical server for socket-level software licensing.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Reserved Instances are a billing discount model and do not change the underlying multi-tenant nature of the hardware.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Dedicated Instances run on hardware dedicated to you, but they do not provide visibility or control over the physical server's sockets, which is required for per-socket licensing.",
+          },
+        },
+      },
+      {
+        id: 5,
+        question:
+          "Security and Compliance is a Shared Responsibility between AWS and the customer. As part of this Shared Responsibility, the customer is also responsible for securing the resources that he has procured under his AWS account.\n\nWhich of the following is the responsibility of the customer?",
+        options: [
+          {
+            id: "A",
+            text: "For Amazon S3 service, managing the operating system and platform is customer responsibility",
+          },
+          {
+            id: "B",
+            text: "AWS is responsible for patching and fixing flaws within the infrastructure, for patching the guest Operating Systems and applications of the customers",
+          },
+          {
+            id: "C",
+            text: "AWS is responsible for training their customers and their employees as part of Customer Specific training",
+          },
+          {
+            id: "D",
+            text: "For Amazon EC2 service, managing guest operating system (including updates and security patches), application software and Security Groups is the responsibility of the customer",
+          },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "For abstracted services like S3, AWS manages the operating system and platform layer. The customer is responsible for their data and access permissions.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is incorrect. AWS patches the infrastructure, but the customer is responsible for patching the guest OS and applications on their EC2 instances.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS trains its own employees, but the customer is responsible for training their own employees.",
+          },
+        },
+      },
+      {
+        id: 6,
+        question:
+          "As a CloudOps Engineer, you have been tasked to generate a report on all API calls made for Elastic Load Balancer from the AWS Management Console.\n\nWhich feature/service will you use to fetch this data?",
+        options: [
+          { id: "A", text: "CloudWatch metrics" },
+          { id: "B", text: "Load Balancer Access logs" },
+          { id: "C", text: "CloudTrail logs" },
+          { id: "D", text: "Load Balancer Request tracing" },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CloudWatch metrics provide performance data (e.g., latency, request count), not a history of API calls made to the load balancer.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Access logs capture details about HTTP requests made to the load balancer, not the API calls used to manage it.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Request tracing adds a trace header to HTTP requests for tracking, but does not log management API calls.",
+          },
+        },
+      },
+      {
+        id: 7,
+        question:
+          "A CloudOps Engineer has just configured an internet facing Load Balancer for traffic distribution across the EC2 instances placed in different Availability Zones. The clients, however, are unable to connect to the Load Balancer.\n\nWhat is the most plausible reason for this issue?",
+        options: [
+          { id: "A", text: "It is an internal server error" },
+          {
+            id: "B",
+            text: "A security group or network ACL is not allowing traffic from the client",
+          },
+          {
+            id: "C",
+            text: "The target returned the error code of 200 indicating an error on the server side",
+          },
+          {
+            id: "D",
+            text: "The target was incorrectly configured as a Lambda function and not an EC2 instance",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "An internal server error (HTTP 500) would be returned by the load balancer, but the issue is that clients cannot connect at all.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason: "An HTTP 200 status code is a success code, not an error.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "An ELB can have a Lambda function as a target. This configuration would not cause a connection failure.",
+          },
+        },
+      },
+      {
+        id: 8,
+        question:
+          "A CloudOps Engineer is configuring an Application Load Balancer (ALB) that fronts Amazon EC2 instances.\n\nWhich of the following options would you identify as correct for configuring the ALB? (Select two)",
+        options: [
+          {
+            id: "A",
+            text: "The targets of a target group in an ALB should all belong to the same Availability Zone",
+          },
+          {
+            id: "B",
+            text: "Before you start using your Application Load Balancer, you must add one or more listeners",
+          },
+          {
+            id: "C",
+            text: "A target can be registered with only one target group at any given time",
+          },
+          {
+            id: "D",
+            text: "When you create a listener, you define actions and conditions for the default rule",
+          },
+          {
+            id: "E",
+            text: "You configure target groups of an ALB by attaching them to the listeners",
+          },
+        ],
+        correct: ["B", "E"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is incorrect. An ALB distributes traffic across targets in multiple Availability Zones to increase availability.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is false. A single target (e.g., an EC2 instance) can be registered with multiple target groups.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is incorrect. The default rule for a listener cannot have conditions. It is the rule that is executed when no other rule's conditions are met.",
+          },
+        },
+      },
+      {
+        id: 9,
+        question:
+          "A company wants to migrate a part of its on-premises infrastructure to AWS Cloud. As a starting point, the company is looking at moving their daily workflow files to AWS Cloud, such that the files are accessible from the on-premises systems as well as AWS Cloud. To reduce the management overhead, the company wants a fully managed service.\n\nWhich service/tool is the right choice for this requirement?",
+        options: [
+          { id: "A", text: "File Gateway of AWS Storage Gateway" },
+          { id: "B", text: "Volume Gateway of AWS Storage Gateway" },
+          { id: "C", text: "Amazon Simple Storage Service (Amazon S3)" },
+          { id: "D", text: "Amazon Elastic Block Store (Amazon EBS)" },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Volume Gateway presents iSCSI block storage volumes, not a file share (NFS/SMB), so it is not suitable for file-based workflows.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "S3 is a cloud-native object storage service. It does not natively provide a file interface for on-premises systems to mount as a drive.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "EBS is a block storage service designed for use with EC2 instances, not for direct access from on-premises systems.",
+          },
+        },
+      },
+      {
+        id: 10,
+        question:
+          "A CloudOps Engineer was asked to enable versioning on an Amazon S3 bucket after a few objects were accidentally deleted by the development team.\n\nWhich of the following represent valid scenarios when a developer deletes an object in the versioning-enabled bucket? (Select two)",
+        options: [
+          {
+            id: "A",
+            text: "A delete marker is set on the deleted object, but the actual object is not deleted",
+          },
+          { id: "B", text: "GET requests can retrieve delete marker objects" },
+          {
+            id: "C",
+            text: "A delete marker has a key, version ID and Access Control List (ACL) associated with it",
+          },
+          {
+            id: "D",
+            text: "GET requests do not retrieve delete marker objects",
+          },
+          {
+            id: "E",
+            text: "The delete marker has the same data associated with it, as the actual object",
+          },
+        ],
+        correct: ["A", "D"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is false. A simple GET request does not retrieve a delete marker. It behaves as if the object is deleted.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "A delete marker has a key and a version ID, but it does not have an associated ACL or data.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is false. A delete marker has no data associated with it.",
+          },
+        },
+      },
+      {
+        id: 11,
+        question:
+          "An analytics company generates reports for various client applications, some of which have critical data. As per the company's compliance guidelines, data has to be encrypted during data exchange, for all channels of communication. An Amazon S3 bucket is configured as a website endpoint and this is now being added as a custom origin for CloudFront.\n\nHow will you secure this channel, as per the company's requirements?",
+        options: [
+          {
+            id: "A",
+            text: "Configure CloudFront that mandates viewers to use HTTPS to request objects from S3. Configure S3 bucket to support HTTPS communication only. This will force CloudFront to use HTTPS for communication between CloudFront and S3",
+          },
+          {
+            id: "B",
+            text: "Configure CloudFront to mandate viewers to use HTTPS to request objects from S3. However, CloudFront and S3 will use HTTP to communicate with each other",
+          },
+          {
+            id: "C",
+            text: "Communication between CloudFront and Amazon S3 is always on HTTP protocol since the network used for communication is internal to AWS and is inherently secure",
+          },
+          {
+            id: "D",
+            text: "CloudFront always forwards requests to S3 by using the protocol that viewers used to submit the requests. So, we only need to configure CloudFront to mandate the use of HTTPS for users",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is incorrect. When an S3 bucket is configured as a website endpoint, it does not support HTTPS connections from CloudFront.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "While the internal network is secure, the statement is factually incorrect. CloudFront can use HTTPS to communicate with an S3 origin if the bucket is not configured as a website endpoint.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This describes the default behavior for an S3 origin (not a website endpoint). It is not a method to 'secure the channel' for a website endpoint origin.",
+          },
+        },
+      },
+      {
+        id: 12,
+        question:
+          'A developer is tasked with creating necessary configurations for AWS CloudFormation that is extensively used in a project. After declaring the necessary stack policy, the developer realized that the users still do not have access to stack resources. The stack policy created by the developer looks like so:\n\n{\n  "Statement" : [\n    {\n      "Effect" : "Allow",\n      "Action" : "Update:*",\n      "Principal": "*",\n      "Resource" : "*"\n    },\n    {\n      "Effect" : "Deny",\n      "Action" : "Update:*",\n      "Principal": "*",\n      "Resource" : "LogicalResourceId/ProductionDatabase"\n    }\n  ]\n}\n\n\nWhy are the users unable to access the stack resources even after giving access permissions to all?',
+        options: [
+          {
+            id: "A",
+            text: "A stack policy applies only during stack updates, it doesn't provide access controls. The developer needs to provide access through IAM policies",
+          },
+          {
+            id: "B",
+            text: "The stack policy is invalid and hence the users are not granted any permissions. The developer needs to fix the syntactical errors in the policy",
+          },
+          {
+            id: "C",
+            text: "Stack policies do not allow wildcard character value (`*`) for the `Principal` element of the policy",
+          },
+          {
+            id: "D",
+            text: "Stack policies are associated with a particular IAM role or an IAM user. Hence, they only work for the users you have explicitly attached the policy to",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "The provided policy is syntactically correct for a CloudFormation stack policy. The issue is not with the syntax.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is false. The Principal element in a stack policy supports only the wildcard (*).",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is false. A stack policy applies to all users who attempt to update the stack. It is not associated with a specific IAM role or user.",
+          },
+        },
+      },
+      {
+        id: 13,
+        question:
+          "A large IT company uses several AWS accounts for the different lines of business. Quite often, the CloudOps Engineer is faced with the problem of sharing AWS KMS keys across multiple AWS accounts for accessing AWS resources spread across these accounts.\n\nHow will you implement a solution to address this issue?",
+        options: [
+          {
+            id: "A",
+            text: "The key policy for the KMS key must give the external account (or users and roles in the external account) permission to use the key. IAM policies in the external account must delegate the key policy permissions to its users and roles",
+          },
+          {
+            id: "B",
+            text: "Use AWS KMS service-linked roles to share access across AWS accounts",
+          },
+          {
+            id: "C",
+            text: "AWS Owned key can be used across AWS accounts. Configure an AWS Owned key and use it across accounts that need to share the key material",
+          },
+          {
+            id: "D",
+            text: "Declare a key policy for the KMS Key to give the external account permission to use the KMS key. This key policy should be embedded with the first request of every transaction",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Service-linked roles are used by AWS services to perform actions on your behalf, not for sharing KMS keys across accounts.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Owned keys are used by AWS services and are not visible or configurable by customers for their own cross-account sharing.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This describes a flawed process. A key policy is a resource policy attached to the KMS key itself, not something embedded with each request.",
+          },
+        },
+      },
+      {
+        id: 14,
+        question:
+          "An e-commerce company is running its server infrastructure on Amazon EC2 instance store-backed instances. For better performance, the company has decided to move their applications to another Amazon EC2 instance store-backed instance with a different instance type.\n\nHow will you configure a solution for this requirement?",
+        options: [
+          {
+            id: "A",
+            text: "You can't resize an instance store-backed instance. Instead, you choose a new compatible instance and move your application to the new instance",
+          },
+          {
+            id: "B",
+            text: "You can't resize an instance store-backed instance. Instead, configure an EBS volume to be the root device for the instance and migrate using the EBS volume",
+          },
+          {
+            id: "C",
+            text: "Create an image of your instance, and then launch a new instance from this image with the instance type that you need. Take any Elastic IP address that you've associated with your original instance and associate it with the new instance for uninterrupted service to your application",
+          },
+          {
+            id: "D",
+            text: "Create an image of your instance, and then launch a new instance from this image with the instance type that you need. Any public IP address associated with the instance can be moved with the instance for uninterrupted access of services",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is false. You can resize an instance store-backed instance by creating an image (AMI) and launching a new instance.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This describes a migration to an EBS-backed instance, but the requirement is to move to another instance store-backed instance.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Public IP addresses are released when an instance is stopped or terminated. An Elastic IP address is required to maintain a consistent public endpoint.",
+          },
+        },
+      },
+      {
+        id: 15,
+        question:
+          "A developer is tasked with cleaning up obsolete resources. When he tried to delete an AWS CloudFormation stack, the stack deletion process returned without any error or a success message. The stack was not deleted either.\n\nWhat is the reason for this behavior and how will you fix it?",
+        options: [
+          {
+            id: "A",
+            text: "The AWS user who initiated the stack deletion does not have enough permissions",
+          },
+          {
+            id: "B",
+            text: "Some resources must be empty before they can be deleted. Such resources will not be deleted if they are not empty and stack deletion fails without any error",
+          },
+          {
+            id: "C",
+            text: "If you attempt to delete a stack with termination protection enabled, the deletion fails and the stack - including its status - remains unchanged",
+          },
+          {
+            id: "D",
+            text: "Dependent resources should be deleted first, before deleting the rest of the resources in the stack. If this order is not followed, then stack deletion fails without an error",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "If the user lacked permissions, the deletion would fail and the stack would enter a DELETE_FAILED state, not remain unchanged without an error.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "In such cases, the stack deletion fails and the stack enters a DELETE_FAILED state, often with an error message explaining the issue.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CloudFormation manages resource dependencies automatically. If a deletion fails, the stack goes to DELETE_FAILED state, not 'return without any error'.",
+          },
+        },
+      },
+      {
+        id: 16,
+        question:
+          "An organization that started as a single AWS account, gradually moved to a multi-account setup. The organization also has multiple AWS environments in each account, that were being managed at the account level. Backups are a big part of this management task. The organization is looking at moving to a centralized backup management process that consolidates and automates Cross-Region backup tasks across AWS accounts.\n\nWhich of the solutions below is the right choice for this requirement?",
+        options: [
+          {
+            id: "A",
+            text: "Configure AWS Systems Manager Maintenance Windows to schedule backup tasks as per company's policies. Tag the resources to help identify them by the AWS environment they run in. Amazon CloudWatch dashboards hosted by Systems Manager to get an overall view of the status of all resources under the AWS account",
+          },
+          {
+            id: "B",
+            text: "Use Amazon EventBridge to create a workflow for scheduled backup of all AWS resources under an account. Amazon S3 lifecycle policies, Amazon EC2 instance backups, and Amazon RDS backups can be used to create the events for the EventBridge. The same workflow can be scheduled to work on production and non-production environments, based on the tags created",
+          },
+          {
+            id: "C",
+            text: "Create a backup plan in AWS Backup. Assign tags to resources based on the environment ( Production, Development, Testing). Create one backup policy for production environments and one backup policy for non-production environments. Schedule the backup plan based on the organization's backup policies",
+          },
+          {
+            id: "D",
+            text: "Use Amazon Data Lifecycle Manager to manage creation, deletion, and managing of all the AWS resources under an account. Tag all the resources that need to be backed up and use lifecycle policies to customize the backup management to cater to the needs of the organization",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Systems Manager Maintenance Windows are for scheduling administrative tasks like patching on instances, not a centralized, cross-account backup service.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "While you could build a solution with EventBridge, it would be complex and less feature-rich for backups compared to the purpose-built AWS Backup service.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon Data Lifecycle Manager (DLM) is used for automating the creation and deletion of EBS snapshots, not for managing backups of all AWS resource types across accounts.",
+          },
+        },
+      },
+      {
+        id: 17,
+        question:
+          "The development team at an IT company is looking at moving its web applications to Amazon EC2 instances. The team is weighing its options for EBS volumes and instance store-backed instances for these applications with varied workloads.\n\nWhich of the following would you identify as correct regarding instance store and EBS volumes? (Select three)",
+        options: [
+          {
+            id: "A",
+            text: "Use separate Amazon EBS volumes for the operating system and your data, even though root volume persistence feature is available",
+          },
+          {
+            id: "B",
+            text: "Data stored in the instance store is preserved when you stop or terminate your instance. However, data is lost when you hibernate the instance. Configure EBS volumes or have a backup plan to avoid using critical data to this behavior",
+          },
+          {
+            id: "C",
+            text: "EBS snapshots only capture data that has been written to your Amazon EBS volume, which might exclude any data that has been locally cached by your application or operating system",
+          },
+          {
+            id: "D",
+            text: "By default, data on a non-root EBS volume is preserved even if the instance is shutdown or terminated",
+          },
+          { id: "E", text: "EBS encryption does not support boot volumes" },
+          {
+            id: "F",
+            text: "Snapshots of EBS volumes, stored on Amazon S3, can be accessed using Amazon S3 APIs",
+          },
+        ],
+        correct: ["A", "C", "D"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is false. Data stored in instance store is lost when the instance is stopped, terminated, or hibernated.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is false. EBS encryption supports boot volumes (root volumes) as well as data volumes.",
+          },
+          F: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is false. EBS snapshots are stored in S3, but they cannot be accessed directly via S3 APIs. They are managed through the EC2 API.",
+          },
+        },
+      },
+      {
+        id: 18,
+        question:
+          "A retail company has complex AWS VPC architecture that is getting difficult to maintain. The company has decided to configure VPC flow logs to track the network traffic to analyze various traffic flow scenarios. The systems administration team has configured VPC flow logs for one of the VPCs, but it's not able to see any logs. After initial analysis, the team has been able to track the error. It says Access error and the administrator of the team wants to change the IAM Role defined in the flow log definition.\n\nWhat is the correct way of configuration a solution for this issue so that the VPC flow logs can be operational?",
+        options: [
+          {
+            id: "A",
+            text: "The error indicates that the IAM role does not have a trust relationship with the flow logs service. Change the trust relationship from flow log configuration",
+          },
+          {
+            id: "B",
+            text: "The flow log is still in the process of being created. It sometimes takes almost 10 minutes to start the logs",
+          },
+          {
+            id: "C",
+            text: "The error indicates IAM role is not correctly configured. After you've created a flow log, you cannot change its configuration. Instead, you need to delete the flow log and create a new one with the required configuration",
+          },
+          {
+            id: "D",
+            text: "The error indicates an internal error has occurred in the flow logs service. Raise a service request with AWS",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "While the trust relationship might be the issue, you cannot change the IAM role or its trust relationship for an existing flow log. It must be recreated.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "If the flow log is still being created, its status would not be 'Access error'. This status indicates a configuration problem.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "The 'Access error' is a specific, documented configuration error related to IAM permissions, not an internal service error.",
+          },
+        },
+      },
+      {
+        id: 19,
+        question:
+          "A data analytics company runs its technology operations on AWS Cloud using different VPC configurations for each of its applications. A CloudOps Engineer wants to configure the Network Access Control List (ACL) and Security Group (SG) of VPC1 to allow access for AWS resources in VPC2.\n\nWhich is the best way of configuring this requirement?",
+        options: [
+          {
+            id: "A",
+            text: "Network ACLs and Security Groups share a parent-child relationship. If resources in VPC2 are given inbound and outbound permissions on Network ACLs of VPC1, the resources will get necessary permissions on the associated security groups too",
+          },
+          {
+            id: "B",
+            text: "By default, Security Groups allow outbound traffic. Hence, only the inbound traffic configuration of the security groups have to be changed to allow requests from resources in VPC2 to access instances in VPC1. If the subnet is not associated with any Network ACL, you will not need any configuration changes",
+          },
+          {
+            id: "C",
+            text: "Based on the inbound and outbound traffic configurations on Network ACL of VPC1, you can create a similar deny rules on Security Groups of the instances in VPC1 to deny all traffic, other than the one originating from resources in VPC2",
+          },
+          {
+            id: "D",
+            text: "The Security Groups of instances on VPC1 should be configured to allow inbound traffic from resources in VPC2. By default, Network ACLs allow all inbound and outbound traffic. So, a default Network ACLs on VPC1 will not need any configuration changes",
+          },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is false. Network ACLs and Security Groups are independent security layers. One does not grant permissions to the other.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Every subnet must be associated with a network ACL. If not explicitly associated, it uses the default ACL, which still exists and has rules.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Security Groups are 'permissive only' and cannot have explicit 'deny' rules. Also, they are independent of NACLs.",
+          },
+        },
+      },
+      {
+        id: 20,
+        question:
+          "A banking service uses Amazon EC2 instances and Amazon RDS databases to run its core business functionalities. The Chief Technology Officer (CTO) of the company has requested granular OS level metrics from the database service for benchmarking.\n\nAs a CloudOps Engineer, how will you provide this information?",
+        options: [
+          {
+            id: "A",
+            text: "Enable Enhanced Monitoring for your RDS DB instance",
+          },
+          {
+            id: "B",
+            text: "Subscribe to Amazon RDS events to be notified when changes occur with a DB instance and its connected resources",
+          },
+          {
+            id: "C",
+            text: "Subscribe to CloudWatch metrics that track CPU utilization of the instances the RDS is hosted on",
+          },
+          {
+            id: "D",
+            text: "Enable Performance Insights to expand on the existing Amazon RDS monitoring features to illustrate your database's performance",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "RDS events provide notifications for state changes (e.g., failover, backup completion), not granular OS-level metrics.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Standard CloudWatch metrics for RDS are collected from the hypervisor layer, not granular OS-level metrics from inside the instance.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Performance Insights provides database load and query performance data, not granular OS-level metrics like memory or filesystem usage.",
+          },
+        },
+      },
+      {
+        id: 21,
+        question:
+          "A company uses AWS Organizations and recently deployed AWS Control Tower to manage its multi account environment. The company now wants to centralize identity management by federating AWS IAM Identity Center with an external SAML 2.0 identity provider. The solution must enable centralized access to all AWS accounts and supported cloud applications.\n\nWhich prerequisites must a CloudOps engineer have to successfully configure this federation? (Select two)",
+        options: [
+          {
+            id: "A",
+            text: "Obtain the SAML metadata document generated by AWS IAM Identity Center for use when configuring the external identity provider",
+          },
+          {
+            id: "B",
+            text: "Collect the SAML metadata from the external identity provider, including the public X.509 signing certificate",
+          },
+          {
+            id: "C",
+            text: "Retrieve the static IP address of the external identity provider to allow network based trust configuration",
+          },
+          {
+            id: "D",
+            text: "Configure AWS IAM roles in each member account with trust policies that reference the external SAML identity provider before enabling federation in IAM Identity Center",
+          },
+          {
+            id: "E",
+            text: "Enable AWS Directory Service for Microsoft Active Directory in the management account and establish a trust relationship with the external identity provider",
+          },
+        ],
+        correct: ["A", "B"],
+        distractorAnalysis: {
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "SAML 2.0 federation is based on cryptographic trust and metadata exchange, not on static IP addresses.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "When using IAM Identity Center, permission sets and roles are managed centrally. You do not need to pre-configure IAM roles in each member account.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Managed Microsoft AD is required only for integrating with an Active Directory identity source, not for direct SAML 2.0 federation with an external IdP.",
+          },
+        },
+      },
+      {
+        id: 22,
+        question:
+          "You are deploying an application and use the cfn-init and cfn-signal script to ensure the application is properly deployed before signaling to CloudFormation the success of your stack deployment. Right now, every time you deploy, CloudFormation completes successfully, even though the instance is still executing the cfn-init script.\n\nAs a CloudOps Engineer, which of the following would you identify as the root cause behind the issue?",
+        options: [
+          { id: "A", text: "You forgot the Wait Condition" },
+          { id: "B", text: "You did not disable Rollbacks" },
+          {
+            id: "C",
+            text: "You forgot to include the cfn-signal command in your user data",
+          },
+          { id: "D", text: "You forgot to include a deletion policy" },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Disabling rollbacks affects what happens on a failure, not whether CloudFormation waits for a success signal.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "The cfn-signal command is typically called from within the instance's user data script, not directly included in the CloudFormation template's main section.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "A deletion policy determines what happens to a resource when the stack is deleted, not how CloudFormation waits for creation signals.",
+          },
+        },
+      },
+      {
+        id: 23,
+        question:
+          "As part of the best practices for DevOps, all your infrastructure is deployed using CloudFormation. This includes EBS volumes. When the CloudFormation stacks are deleted, it is mandatory to keep a snapshot of the EBS volumes for backup and compliance purposes.\n\nHow can you achieve this using CloudFormation?",
+        options: [
+          { id: "A", text: "Enable termination protection" },
+          {
+            id: "B",
+            text: "Use cfn helper scripts and Wait Conditions upon stack deletion",
+          },
+          { id: "C", text: "Use DeletionPolicy=Snapshot" },
+          { id: "D", text: "Reference the EBS volume as a stack output" },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Termination protection prevents the stack from being deleted, which is the opposite of what is required.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "cfn-init and cfn-signal scripts are for provisioning and signaling during stack creation, not for managing resource deletion behavior.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Stack outputs are for exporting values, not for controlling the lifecycle behavior of a resource when the stack is deleted.",
+          },
+        },
+      },
+      {
+        id: 24,
+        question:
+          "You are provisioning an internal full LAMP stack using CloudFormation, and the EC2 instance gets configured automatically using the cfn helper scripts, such as cfn-init and cfn-signal. The stack creation fails as CloudFormation fails to receive a signal from your EC2 instance.\n\nWhat are the possible reasons for this? (Select two)",
+        options: [
+          {
+            id: "A",
+            text: "The subnet where the application is deployed does not have a network route to the CloudFormation service through a NAT Gateway or Internet Gateway",
+          },
+          {
+            id: "B",
+            text: "The EC2 instance does not have a proper IAM role allowing to signal the success to CloudFormation",
+          },
+          {
+            id: "C",
+            text: "The cfn-signal script does not get executed before the timeout of the wait condition",
+          },
+          {
+            id: "D",
+            text: "AWS is experiencing an Insufficient Capacity for the instance type you requested",
+          },
+          { id: "E", text: "The cfn-init script failed" },
+        ],
+        correct: ["A", "C"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "The cfn-signal script does not require an IAM role to send a success signal to CloudFormation.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Insufficient capacity would prevent the instance from launching at all, and the stack would fail for a different reason, not for failing to receive a signal.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Even if cfn-init fails, the cfn-signal script should still execute and send a failure signal to CloudFormation. The issue is that CloudFormation isn't receiving any signal.",
+          },
+        },
+      },
+      {
+        id: 25,
+        question:
+          "You are developing a new CloudFormation stack and writing some very complex cfn-init code. The code fails and you would like to debug why. When reading the documentation, you see all the logs are in the file /var/cfn/cfn-init-output.log and will give you more information as to why the instance provisioning is failing. But you realize that you can't gain access to this file as the CloudFormation stack always terminates the EC2 instance when the creation fails.\n\nWhat can you do to access these logs files, while not changing the way your EC2 instance works and ensuring you can debug your instance over 24 hours?",
+        options: [
+          {
+            id: "A",
+            text: "Install the CloudWatch logs agent, create a new IAM role and assign it to the EC2 instance, and send the logs directly to CloudWatch Logs",
+          },
+          { id: "B", text: "Set OnFailure=DO_NOTHING" },
+          { id: "C", text: "Increase the Wait Timeout to 2 hours" },
+          {
+            id: "D",
+            text: "Enable VPC Flow Logs and intercept the cfn-init log file",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This changes the way the EC2 instance works (by installing an agent and assigning an IAM role), which violates the requirement.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Increasing the Wait Timeout does not prevent the instance from being terminated if the stack creation fails. The instance would still be terminated.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "VPC Flow Logs capture network traffic metadata, not the content of log files on the EC2 instance.",
+          },
+        },
+      },
+      {
+        id: 26,
+        question:
+          "A company transfers multiple gigabytes of data to Amazon S3 every day from geographically distributed client locations. The company wants to increase upload throughput and reduce latency when transferring large files.\n\nWhich solution should a systems administrator implement to meet these requirements?",
+        options: [
+          {
+            id: "A",
+            text: "Configure AWS Global Accelerator and associate it with the S3 bucket to optimize upload routing",
+          },
+          {
+            id: "B",
+            text: "Activate S3 Transfer Acceleration on the bucket and direct uploads to the transfer acceleration endpoint",
+          },
+          {
+            id: "C",
+            text: "Enable S3 Cross-Region Replication to replicate uploaded objects to a bucket in another Region closer to users",
+          },
+          {
+            id: "D",
+            text: "Deploy an Amazon ElastiCache cluster to cache frequently uploaded objects before sending them to Amazon S3",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Global Accelerator improves performance for TCP/UDP traffic, but it cannot be directly associated with an S3 bucket endpoint.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Cross-Region Replication copies objects after they have been uploaded. It does not improve the upload throughput or latency.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "ElastiCache is an in-memory cache for data, not a service for accelerating data transfer to S3.",
+          },
+        },
+      },
+      {
+        id: 27,
+        question:
+          "A company runs high frequency transactional workloads on a single Amazon RDS DB instance. The application commits transactions multiple times per minute. The company now requires automatic failover in the event of infrastructure failure and must ensure that no committed transactions are lost.\n\nWhich solution should a systems administrator implement to meet these requirements?",
+        options: [
+          {
+            id: "A",
+            text: "Convert the DB instance to a Multi-AZ deployment to enable synchronous replication and automatic failover",
+          },
+          {
+            id: "B",
+            text: "Configure an RDS read replica in the same Region and automate promotion to primary by using an AWS Lambda function during a failure event",
+          },
+          {
+            id: "C",
+            text: "Enable automated backups with a short backup retention period and perform a point in time restore to a new DB instance during a disaster recovery event",
+          },
+          {
+            id: "D",
+            text: "Configure an RDS read replica in a secondary Region and automate promotion to primary by using an AWS Lambda function during a failure event",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Read replicas use asynchronous replication, so data loss is possible. Promotion is not automatic and would require a DNS change or application reconfiguration.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Point-in-time restore is a manual disaster recovery process, not an automatic failover solution. It also takes time, during which transactions would be lost.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Cross-Region read replicas are asynchronous, leading to potential data loss. The promotion process is not automatic and requires manual intervention.",
+          },
+        },
+      },
+      {
+        id: 28,
+        question:
+          "How can you enforce encryption on all the files uploaded into your example S3 bucket?",
+        options: [
+          { id: "A", text: 'Using the "Default Encryption" setting in AWS S3' },
+          {
+            id: "B",
+            text: 'Use the following S3 bucket policy: { "Statement":[ { "Action": "s3:*", "Effect":"Deny", "Principal": "*", "Resource":"arn:aws:s3:::bucketname/*", "Condition":{ "Bool": { "aws:SecureTransport": false } } } ] }',
+          },
+          {
+            id: "C",
+            text: 'Use the following S3 bucket policy: { "Statement":[ { "Action": "s3:*", "Effect":"Deny", "Principal": "*", "Resource":"arn:aws:s3:::bucketname/*", "Condition":{ "Bool": { "aws:SecureTransport": true } } } ] }',
+          },
+          {
+            id: "D",
+            text: "Use an encrypted CloudFront distribution in front of your S3 bucket",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This bucket policy denies unencrypted (HTTP) access, but it does not enforce that objects are encrypted with server-side encryption when uploaded.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This bucket policy denies encrypted (HTTPS) access, which is the opposite of a security best practice and does not enforce server-side encryption.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CloudFront can enforce HTTPS between viewers and itself, but it does not enforce server-side encryption on the S3 bucket.",
+          },
+        },
+      },
+      {
+        id: 29,
+        question:
+          "You are in S3 and have deleted all the files in it. As you can see, the bucket is empty. You have tried to delete the bucket afterward and it fails with an error saying the bucket is not empty.\n\nWhat's the issue?",
+        options: [
+          {
+            id: "A",
+            text: "S3 is eventually consistent. Wait two minutes and retry, it will work then",
+          },
+          {
+            id: "B",
+            text: "S3 versioning is enabled and delete markers are still present in the bucket",
+          },
+          {
+            id: "C",
+            text: "An S3 bucket policy is set up and it prevents bucket deletion",
+          },
+          { id: "D", text: "Some files are in Glacier" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon S3 now provides strong read-after-write consistency. This is not an eventual consistency issue.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "A bucket policy that prevents deletion would result in an 'Access Denied' error, not a 'bucket not empty' error.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Objects in S3 Glacier are not stored directly in an S3 bucket. They are archived in a Glacier vault. The S3 bucket would be empty.",
+          },
+        },
+      },
+      {
+        id: 30,
+        question:
+          "After enabling S3 MFA-Delete, for which actions do you need MFA? (Select two)",
+        options: [
+          { id: "A", text: "Permanently delete an object version" },
+          { id: "B", text: "Suspending versioning" },
+          { id: "C", text: "Enabling Versioning" },
+          { id: "D", text: "Listing deleted versions" },
+          { id: "E", text: "Uploading a new object version" },
+        ],
+        correct: ["A", "B"],
+        distractorAnalysis: {
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Enabling versioning does not require MFA. MFA-Delete is required for changing the versioning state (which includes suspending, but not enabling).",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Listing deleted versions is a read-only operation and does not require MFA.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Uploading a new object version is a write operation, but it does not require MFA when MFA-Delete is enabled.",
+          },
+        },
+      },
+      {
+        id: 31,
+        question: "How should MFA-Delete be enabled on an S3 bucket?",
+        options: [
+          { id: "A", text: "Using the root account and the AWS Console" },
+          { id: "B", text: "Using the root account and the AWS CLI" },
+          { id: "C", text: "Using an admin IAM user and the AWS Console" },
+          { id: "D", text: "Using an admin IAM user and the AWS CLI" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "MFA-Delete can only be enabled via the AWS CLI or API, not the AWS Console.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "MFA-Delete can only be enabled by the root account, not by an IAM user.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "MFA-Delete can only be enabled by the root account, and only via the CLI/API.",
+          },
+        },
+      },
+      {
+        id: 32,
+        question:
+          "You suspect some of your employees try to access files in S3 that they don't have access to.\n\nHow can you verify this is indeed the case without them noticing?",
+        options: [
+          {
+            id: "A",
+            text: "Restrict their IAM policies and look at CloudTrail logs",
+          },
+          {
+            id: "B",
+            text: "Enable S3 Access Logs and analyze them using Athena",
+          },
+          { id: "C", text: "Use a bucket policy" },
+          {
+            id: "D",
+            text: "Use AWS Config to define compliance rules on these users",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Restricting their policies would change their access and they would notice. CloudTrail logs management API calls, not data access events like GET requests by default.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "A bucket policy defines permissions; it does not log access attempts.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Config records resource configuration changes, not a history of data access requests.",
+          },
+        },
+      },
+      {
+        id: 33,
+        question:
+          "As a service provider, you generate a daily report that you need to share with your dynamically changing list of over 10,000 customers. These reports sit in S3, and you would like to automate sharing the reports with them so they can have on-demand access upon their identity being proven.\n\nYou plan to use Cognito, API Gateway and AWS Lambda to address this use-case. On the S3 side, what should you do?",
+        options: [
+          {
+            id: "A",
+            text: "Provide each of your customers an AWS user and tell them to use the CLI",
+          },
+          { id: "B", text: "Generate pre-signed URLs for your reports" },
+          {
+            id: "C",
+            text: "Create a bucket policy so that the S3 files are only accessible from CloudFront and force SSL mutual authentication there",
+          },
+          {
+            id: "D",
+            text: "Make the S3 bucket public and password protect each S3 file. Share the password with each customer",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is not scalable or secure for 10,000 external customers. It also doesn't integrate with the planned Cognito, API Gateway, and Lambda architecture.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Mutual TLS (mTLS) is supported by API Gateway, not CloudFront. Also, this approach doesn't leverage pre-signed URLs for time-limited access.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "S3 does not have a native feature to password-protect individual files. Making the bucket public is insecure.",
+          },
+        },
+      },
+      {
+        id: 34,
+        question:
+          "A company connects its VPC to an on premises data center through a Site-to-Site VPN. An Amazon EC2 instance with private IP address 172.31.17.137 resides in a private subnet. An administrator attempts to ping the instance from an on premises host at 205.0.115.14 but receives no response. VPC Flow Logs show the following entries for the EC2 instance’s elastic network interface:\n\n2 123456123456 eni-1234b8zа 205.0.115.14 172.31.17.137 0 0 1 4 336 1432919029 1432919129 ACCEPT OK\n2 123456123456 eni-1234b8zа 172.31.17.137 205.0.115.14 0 0 1 4 336 1432919039 1432919129 REJECT OK\n\nWhat action should the administrator take to resolve the issue?",
+        options: [
+          {
+            id: "A",
+            text: "Modify the subnet network ACL to allow outbound ICMP traffic to the on premises host",
+          },
+          {
+            id: "B",
+            text: "Update the EC2 instance security group to explicitly allow outbound ICMP traffic to the on premises host",
+          },
+          {
+            id: "C",
+            text: "Modify the subnet network ACL to allow inbound ICMP traffic from the on premises host",
+          },
+          {
+            id: "D",
+            text: "Disable source and destination checks on the EC2 instance to allow return traffic to flow back to the on premises host",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Security groups are stateful, so if inbound ICMP is allowed (which it must be for the 'ACCEPT' entry), the outbound response is automatically allowed. The 'REJECT' indicates a stateless ACL is blocking the return traffic.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "The inbound ICMP traffic is already accepted. The problem is the outbound response being rejected.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Source/destination checks are for instances that act as NAT or a router. This is a standard ping response, so disabling them will not help.",
+          },
+        },
+      },
+      {
+        id: 35,
+        question:
+          "You distribute a monthly raw data extract of your public forum's discussions that is about 10TB each month. Currently, the archive is distributed through an EFS drive, that is mounted on all your EC2 instances. Customers retrieve the file through the load balancer you have. This solution is costing you a lot of money and forces you to tremendously scale on the 1st of each month as people all try to retrieve the file at the same time.\n\nWhat can you do to improve the situation?",
+        options: [
+          { id: "A", text: "Enable static file caching on the ALB" },
+          {
+            id: "B",
+            text: "Store the files in S3 and distribute them using a CloudFront distribution instead",
+          },
+          {
+            id: "C",
+            text: "Store the files on instance stores instead, so you don't need to use EFS anymore",
+          },
+          { id: "D", text: "Enable enhanced networking between EC2 and ALB" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Application Load Balancers do not have a feature called 'static file caching'. Caching at this layer is not its purpose.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Instance stores are ephemeral and cannot be shared across multiple EC2 instances like a file server, making this a poor solution for distributing a single file.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Enhanced networking improves network performance between EC2 instances, but it does not solve the core problems of cost, scalability, and caching for a single large, static file.",
+          },
+        },
+      },
+      {
+        id: 36,
+        question:
+          "Your website is hosted on S3 and exposed through a CloudFront distribution and some users are said to experience a lot of 501 errors.\n\nHow can you analyze these errors and come up with a solution?",
+        options: [
+          { id: "A", text: "Analyze the CloudFront access logs using Athena" },
+          {
+            id: "B",
+            text: "Analyze the CloudFront access logs using Inspector",
+          },
+          { id: "C", text: "Enable S3 access logs and analyze using Athena" },
+          {
+            id: "D",
+            text: "Enable S3 access logs and analyze using Inspector",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon Inspector is a vulnerability management service, not a log analysis tool.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "S3 access logs would show requests to the S3 origin, not the viewer-facing CloudFront distribution. They also wouldn't provide information about errors generated by CloudFront itself.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This combines two incorrect approaches: S3 access logs (not the correct source) and Inspector (not a log analysis tool).",
+          },
+        },
+      },
+      {
+        id: 37,
+        question:
+          "You host a forum for law questions and per your country's law, you must store all the archives of conversations (about 1 TB) every week for 7 years. These archives must not be tampered with in any way, and you must prove you have set enough controls around your data protection.\n\nWhat should you do?",
+        options: [
+          {
+            id: "A",
+            text: "Store the archives in S3 and set up a bucket policy, enable versioning and MFA-Delete",
+          },
+          {
+            id: "B",
+            text: "Store the archives in Glacier and set up a Vault Lock Policy for WORM access",
+          },
+          {
+            id: "C",
+            text: "Store the archives in EBS and use Linux file system protection on the files",
+          },
+          {
+            id: "D",
+            text: "Store the archives in AWS Artifact and enable compliance monitoring",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "While versioning and MFA-Delete help, they do not create a true 'Write Once Read Many' (WORM) lock. Objects can still be overwritten (creating a new version).",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "EBS is not designed for long-term archival storage of a single 1TB file and lacks native, immutable WORM controls that are independently auditable.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Artifact is a portal for downloading AWS compliance reports, not a service for storing customer data.",
+          },
+        },
+      },
+      {
+        id: 38,
+        question:
+          "Your data center generates tens of terabytes of data daily and has a cumulative historic data volume of 5PB. The data center is running short of storage as well as bandwidth infrastructure to store or transfer this data. Later you would like to analyze this data using Redshift or Athena, however, first you must clean it using a proprietary process running on EC2.\n\nWhat's the optimal way of moving this data to the cloud?",
+        options: [
+          { id: "A", text: "Use S3 transfer acceleration" },
+          { id: "B", text: "Use Snowball Edge" },
+          { id: "C", text: "Use Volume Gateway" },
+          { id: "D", text: "Use AWS Data Migration" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Transfer Acceleration speeds up internet transfers, but the primary constraint is the data center's bandwidth. For 5PB, this would be too slow and expensive.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Volume Gateway is for ongoing hybrid cloud storage, not a one-time migration of 5PB from a data center with limited bandwidth.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Database Migration Service (DMS) is for live database migrations, not for moving 5PB of general file data.",
+          },
+        },
+      },
+      {
+        id: 39,
+        question:
+          "An ecommerce platform uses Amazon ElastiCache for Redis OSS to cache frequently accessed product query results. CloudWatch metrics show a consistently high number of cache evictions. As a CloudOps Engineer, you have been tasked to reduce evictions and ensure that popular items remain in cache, while minimizing operational complexity.\n\nWhich solution do you recommend?",
+        options: [
+          {
+            id: "A",
+            text: "Increase the default TTL setting for cached product entries so that data remains in memory longer",
+          },
+          {
+            id: "B",
+            text: "Enable Multi-AZ with automatic failover on the Redis replication group to reduce eviction events during peak traffic",
+          },
+          {
+            id: "C",
+            text: "Replace the existing cluster with a new ElastiCache cluster that uses a larger node instance type to provide more memory",
+          },
+          {
+            id: "D",
+            text: "Decrease the default TTL setting for cached product entries to free memory more quickly",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Increasing TTL would cause items to stay in cache longer, likely increasing memory pressure and making evictions worse.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Multi-AZ improves availability, not memory capacity. It will not reduce evictions.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Decreasing TTL would remove items sooner, which might reduce memory pressure, but it would likely cause popular items to be evicted prematurely, increasing cache misses and defeating the purpose of caching.",
+          },
+        },
+      },
+      {
+        id: 40,
+        question:
+          "You would like to replace your on-premise NFS v3 drive with something that will leverage the huge capacity of Amazon S3. You would like to ensure files that are commonly used are locally cached on-premises.\n\nWhat should you use?",
+        options: [
+          { id: "A", text: "EFS" },
+          { id: "B", text: "File Gateway" },
+          { id: "C", text: "EBS Drives" },
+          { id: "D", text: "Volume Gateway" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "EFS is a cloud-native file system for EC2, not a hybrid storage gateway that caches on-premises.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "EBS is block storage for EC2, not a file storage solution accessible via NFS from on-premises.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Volume Gateway presents iSCSI block volumes, not an NFS file share.",
+          },
+        },
+      },
+      {
+        id: 41,
+        question:
+          "You just released a new mobile game and users have the chance to interact with each other. In order to publish a profile picture, your company has made the architectural decision to have users directly upload their images into a designated S3 bucket.\n\nHow can you provide write access to the mobile application users effectively?",
+        options: [
+          {
+            id: "A",
+            text: "Create an AWS Lambda function that will create an IAM User for each new user, and store their API keys in the mobile app database",
+          },
+          {
+            id: "B",
+            text: "Create one IAM user and publish the access keys as part of the mobile application",
+          },
+          {
+            id: "C",
+            text: "Federate the users with SAML so they can use Single Sign-On (SSO) to access S3",
+          },
+          {
+            id: "D",
+            text: "Federate the users with Cognito so they can assume a role to access S3",
+          },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Creating IAM users for millions of mobile app users is not scalable or practical.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Embedding IAM credentials in a mobile app is a major security anti-pattern, as they can be easily extracted.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "SAML is typically used for enterprise SSO, not for authenticating millions of individual mobile app users with a social or email login.",
+          },
+        },
+      },
+      {
+        id: 42,
+        question:
+          'Your home-cooking website stores its recipes and comments from users in a Multi-AZ RDS database, which is located in a private subnet. As of yesterday, it seems that your users are unable to access the website and see an error message "512 - Cannot connect to the database".\n\nWhat could be the reason why the website cannot connect to the database anymore? (Select three)',
+        options: [
+          { id: "A", text: "DB Security Group inbound rules have changed" },
+          { id: "B", text: "Network ACL inbound rules have changed" },
+          { id: "C", text: "Security Group outbound rules have changed" },
+          { id: "D", text: "Network ACL outbound rules have changed" },
+          { id: "E", text: "The primary database's private IP has changed" },
+          { id: "F", text: "A read replica has been created recently" },
+        ],
+        correct: ["A", "B", "D"],
+        distractorAnalysis: {
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Security groups are stateful. If inbound traffic from the web servers is allowed, the return traffic is automatically allowed, regardless of outbound rules.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Applications should connect to RDS using the DNS endpoint, which remains the same even if the underlying private IP changes during a failover.",
+          },
+          F: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Creating a read replica does not change the primary database's endpoint or its network connectivity.",
+          },
+        },
+      },
+      {
+        id: 43,
+        question:
+          "The Big Data team at an insurance company is performing a nightly ETL on top of your production RDS database to compute a view and then extract it into their data lake in Amazon S3. This query has been performing reasonably well in your website's infancy but now that it has grown in popularity, the query is running for a much longer period and affects the user experience while they browse your website.\n\nHow can you improve the situation in the short and long term?",
+        options: [
+          { id: "A", text: "Enable RDS Multi-AZ" },
+          { id: "B", text: "Create an RDS Read Replica for the ETL team" },
+          { id: "C", text: "Upgrade the RDS instance type" },
+          { id: "D", text: "Use Athena to query RDS" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Multi-AZ provides high availability, but the standby replica cannot be used for read queries, so it doesn't offload the ETL workload.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Upgrading the instance type might provide a temporary fix, but it doesn't decouple the ETL workload from the production website. The problem will return as traffic grows.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Athena can query RDS via its federated query feature, but this would still place the query load on the production database, not solving the contention issue.",
+          },
+        },
+      },
+      {
+        id: 44,
+        question:
+          "Your RDS database sometimes can become unresponsive, failing health checks and you need your application to fail-over automatically and safely without losing any committed transactions.\n\nWhich options would you choose?",
+        options: [
+          {
+            id: "A",
+            text: "Create an RDS read replica in the same region and an AWS lambda function to promote that replica as the main database when the main RDS database is down",
+          },
+          { id: "B", text: "Enable RDS Multi-AZ" },
+          {
+            id: "C",
+            text: "Create an RDS read replica in a different region and an AWS lambda function to promote that replica as the main database when the main RDS database is down",
+          },
+          {
+            id: "D",
+            text: "Setup a CloudWatch alarm for DB RAM going over 90% and reboot the database then",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "A read replica is updated asynchronously, so some transactions could be lost. Promotion is not automatic and would require a DNS change.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "A cross-Region read replica is also asynchronous, so data loss is possible. Failover is not automatic.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Rebooting a database is a disruptive action, not a graceful automatic failover. It would also cause downtime.",
+          },
+        },
+      },
+      {
+        id: 45,
+        question:
+          "You have a production Postgres RDS database and a custom rule in AWS Config has been set up and shows that some connections established to your database are not encrypted.\n\nHow can you ensure all connections to RDS are encrypted?",
+        options: [
+          { id: "A", text: "Edit the security group rules" },
+          { id: "B", text: "Review the DB parameter groups" },
+          { id: "C", text: "Enable SSL connections from the RDS Console" },
+          {
+            id: "D",
+            text: "Patch the database with the SSL/TLS Postgres Addon",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Security groups control network access, but they cannot enforce that the connection itself uses SSL/TLS.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "There is no single 'Enable SSL' button. SSL enforcement is configured via a DB parameter group (rds.force_ssl).",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Amazon RDS is a managed service; you cannot 'patch' the underlying database. Configuration is done via parameter groups.",
+          },
+        },
+      },
+      {
+        id: 46,
+        question:
+          "A retail company has realized that their Amazon EBS volume backed EC2 instance is consistently over-utilized and needs an upgrade. A developer has connected with you to understand the key parameters to be considered when changing the instance type.\n\nAs a CloudOps Engineer, which of the following would you identify as correct regarding the instance types for the given use-case? (Select three)",
+        options: [
+          {
+            id: "A",
+            text: "Resizing of an instance is only possible if the root device for your instance is an EBS volume",
+          },
+          {
+            id: "B",
+            text: "The new instance retains its public, private IPv4 addresses, any Elastic IP addresses, and any IPv6 addresses that were associated with the old instance",
+          },
+          {
+            id: "C",
+            text: "You must stop your Amazon EBS–backed instance before you can change its instance type. AWS moves the instance to new hardware; however, the instance ID does not change",
+          },
+          {
+            id: "D",
+            text: "If your instance is in an Auto Scaling group, the Amazon EC2 Auto Scaling service marks the stopped instance as unhealthy, and may terminate it and launch a replacement instance",
+          },
+          {
+            id: "E",
+            text: "There is no downtime on the instance if you choose an instance of a compatible type since AWS starts the new instance and shifts the applications from current instance",
+          },
+          {
+            id: "F",
+            text: "Resizing of an instance is possible if the root device is either EBS volume or an instance store volume. However, instance store volumes taking longer to start on the new instance, since cache data is lost on these instances",
+          },
+        ],
+        correct: ["A", "C", "D"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "The instance retains its private IP, Elastic IPs, and IPv6 addresses, but the public IP address will change.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "The instance must be stopped to change its type, which causes downtime.",
+          },
+          F: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Resizing is only possible if the root device is an EBS volume. An instance store-backed instance cannot be resized.",
+          },
+        },
+      },
+      {
+        id: 47,
+        question:
+          "A large IT company manages several projects on AWS Cloud and has decided to use AWS X-Ray to trace application workflows. The company uses a plethora of AWS services like API Gateway, Amazon EC2 instances, Amazon S3 storage service, Elastic Load Balancers and AWS Lambda functions.\n\nWhich of the following should the company keep in mind while using AWS X-Ray for the AWS services they use?",
+        options: [
+          {
+            id: "A",
+            text: "Application Load balancers do not send data to X-Ray",
+          },
+          {
+            id: "B",
+            text: "AWS X-Ray does not integrate with Amazon S3 and you need to use CloudTrail for tracking requests on S3",
+          },
+          {
+            id: "C",
+            text: "AWS X-Ray cannot be used to trace your AWS Lambda functions since they are not integrated",
+          },
+          {
+            id: "D",
+            text: "You cannot use X-Ray to trace or analyze user requests to your Amazon API Gateway APIs",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS X-Ray does integrate with S3 to trace upstream requests to your application's S3 buckets.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "X-Ray integrates with Lambda to trace function invocations and execution.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "API Gateway has native support for X-Ray tracing to analyze requests as they travel through the API.",
+          },
+        },
+      },
+      {
+        id: 48,
+        question:
+          "A CloudOps Engineer has configured Amazon EC2 instances in an Auto Scaling Group (ASG) for two separate development teams. However, only one configuration has CloudWatch agent installed on the instances, whereas the other one does not have it. The Engineer has not manually installed the agents on either group of instances.\n\nWhich of the following would you identify as a root-cause behind this issue?",
+        options: [
+          {
+            id: "A",
+            text: "CloudWatch agent can be configured to be loaded on the EC2 instances while configuring the ASG. The developer could have unintentionally checked this flag on one of the ASGs he created",
+          },
+          {
+            id: "B",
+            text: "The architecture of the `InstanceType` mentioned in your launch configuration does not match the image architecture. So, the ASG was created with errors, resulting in skipping CloudWatch agent. A thorough check is needed for such ASGs, more services could have been skipped",
+          },
+          {
+            id: "C",
+            text: "If your AMI contains a CloudWatch agent, it’s automatically installed on EC2 instances when you create an EC2 Auto Scaling group. The developer needs to choose the AMI that has CloudWatch agent pre-configured on it",
+          },
+          {
+            id: "D",
+            text: "The instance architecture might not have been compatible with the AMI chosen. The incompatibility results in various errors, one of which is, some of the AWS services will not be installed as expected",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "There is no such configuration flag when creating an ASG. The CloudWatch agent must be installed via the AMI or user data.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "If the architecture mismatched, the instances would fail to launch entirely, not just lack a CloudWatch agent.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "An architecture compatibility issue would prevent the instance from launching. The issue is that the CloudWatch agent is simply not present in the AMI.",
+          },
+        },
+      },
+      {
+        id: 49,
+        question:
+          "An automobile company manages its AWS resource creation and maintenance process through AWS CloudFormation. The company has successfully used CloudFormation so far, and wishes to continue using the service. However, while moving to CloudFormation, the company only moved critical resources and left out the other resources to be managed manually. To leverage the ease of creation and maintenance that CloudFormation offers, the company wants to move rest of the resources to CloudFormation.\n\nWhich of the following options is the recommended way to configure this requirement?",
+        options: [
+          {
+            id: "A",
+            text: "Use `Parameters` section of CloudFormation template to input the required resources",
+          },
+          {
+            id: "B",
+            text: "You can bring an existing resource into AWS CloudFormation management using `resource import`",
+          },
+          {
+            id: "C",
+            text: "You can use `Mappings` part of CloudFormation template to input the needed resources",
+          },
+          {
+            id: "D",
+            text: "Drift detection is the mechanism by which you add resources to the stack of Cloudformation resources already created",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Parameters are for passing inputs into a template, not for importing existing resources.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Mappings are for static lookup tables within a template, not for importing resources.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Drift detection is for identifying when a stack's actual configuration differs from its template, not for importing resources.",
+          },
+        },
+      },
+      {
+        id: 50,
+        question:
+          "As a CloudOps Engineer, you have been asked to fix the network performance issues for a fleet of Amazon EC2 instances of a company.\n\nWhich of the following use-cases represents the right fit for using enhanced networking?",
+        options: [
+          {
+            id: "A",
+            text: "To reach speeds up to 2,500 Gbps between EC2 instances",
+          },
+          {
+            id: "B",
+            text: "To support throughput near or exceeding 20K packets per second (PPS) on the VIF driver",
+          },
+          {
+            id: "C",
+            text: "To configure multi-attach for an EBS volume that can be attached to a maximum of 16 EC2 instances in a single Availability Zone",
+          },
+          {
+            id: "D",
+            text: "To configure Direct Connect to reach speeds up to 25 Gbps between EC2 instances",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "2,500 Gbps is not a realistic bandwidth figure for EC2. Enhanced networking helps with high PPS, not an arbitrary high bandwidth number.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "EBS multi-attach is a storage feature and is not related to enhanced networking.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Direct Connect is a dedicated network connection from on-premises to AWS. Enhanced networking is an EC2 feature for network performance between instances.",
+          },
+        },
+      },
+      {
+        id: 51,
+        question:
+          "As CloudOps Engineer, you have created two configuration files for CloudWatch Agent configuration. The first configuration file collects a set of metrics and logs from all servers and the second configuration file collects metrics from certain applications. You have given the same name to both the files but stored these files in different file paths.\n\nWhat is the outcome when the CloudWatch Agent is started with the first configuration file and then the second configuration file is appended to it?",
+        options: [
+          {
+            id: "A",
+            text: "Second configuration file parameters are added to the Agent already running with the first configuration file parameters",
+          },
+          {
+            id: "B",
+            text: "Two different Agents are started with different configurations, collecting the metrics and logs listed in either of the configuration files",
+          },
+          {
+            id: "C",
+            text: "The append command overwrites the information from the first configuration file instead of appending to it",
+          },
+          {
+            id: "D",
+            text: "A CloudWatch Agent can have only one configuration file and all required parameters are defined in this file alone",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This would be the intended behavior if the files had different names. Because they have the same name, an overwrite occurs instead.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Starting the agent twice on the same instance is not a supported method for combining configurations.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "The CloudWatch Agent supports appending multiple configuration files, provided they have unique names.",
+          },
+        },
+      },
+      {
+        id: 52,
+        question:
+          "A systems administrator observes that an Amazon CloudFront distribution has a cache hit ratio below 10 percent. The low cache efficiency is increasing origin load and degrading user performance.\n\nWhich actions should the administrator take to improve cache efficiency, enhance network performance, and reduce load on the origin? (Select two)",
+        options: [
+          {
+            id: "A",
+            text: "Configure an origin group with two origins and enable origin failover to distribute traffic across both origins",
+          },
+          {
+            id: "B",
+            text: "Enable automatic compression in the cache behavior configuration for supported file types",
+          },
+          {
+            id: "C",
+            text: "Configure Amazon Route 53 weighted routing policies to distribute user traffic across multiple CloudFront distributions",
+          },
+          {
+            id: "D",
+            text: "Enable CloudFront Origin Shield in the Region closest to the origin to consolidate cache misses before they reach the origin",
+          },
+          {
+            id: "E",
+            text: "Increase the default and maximum TTL (Time to Live) settings in the cache behavior to allow objects to remain cached longer at edge locations",
+          },
+        ],
+        correct: ["D", "E"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Origin failover improves availability, not cache hit ratio. It does not reduce the number of requests to the origin.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Compression optimizes file sizes and transfer speeds, but it does not directly increase cache hit ratio.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Splitting traffic across multiple distributions would likely reduce cache efficiency, as each distribution has its own independent cache.",
+          },
+        },
+      },
+      {
+        id: 53,
+        question:
+          "A CloudOps Engineer is configuring Amazon EC2 status check alarm to publish a notification to an SNS topic when the instance fails either the instance check or system status check.\n\nWhich CloudWatch metric is the right choice for this configuration?",
+        options: [
+          { id: "A", text: "`StatusCheckFailed`" },
+          { id: "B", text: "`CombinedStatusCheckFailed`" },
+          { id: "C", text: "`StatusCheckFailed_Instance`" },
+          { id: "D", text: "`StatusCheckFailed_System`" },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: true,
+            isRealButWrongPurpose: false,
+            reason: "This is not a valid CloudWatch metric name.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This metric only reports on the instance status check (e.g., impaired OS), not the system status check (e.g., loss of network power).",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This metric only reports on the system status check, not the instance status check.",
+          },
+        },
+      },
+      {
+        id: 54,
+        question:
+          "As a CloudOps Engineer, you have been asked to calculate the total network usage for all the EC2 instances of a company and determine which instance used the most bandwidth within a date range.\n\nWhich Amazon CloudWatch metric(s) will help you get the needed data?",
+        options: [
+          { id: "A", text: "`DataTransfer-Out-Bytes`" },
+          { id: "B", text: "`NetworkIn` and `NetworkOut`" },
+          { id: "C", text: "`DiskReadBytes` and `DiskWriteBytes`" },
+          { id: "D", text: "`NetworkTotalBytes`" },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is a cost allocation metric in Cost Explorer, not a per-instance CloudWatch metric.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason: "These metrics track disk I/O, not network usage.",
+          },
+          D: {
+            isFakeService: true,
+            isRealButWrongPurpose: false,
+            reason:
+              "This is not a valid CloudWatch metric name. Network usage is tracked by two separate metrics for inbound and outbound traffic.",
+          },
+        },
+      },
+      {
+        id: 55,
+        question:
+          "A team noticed that it has accidentally deleted the AMI of Amazon EC2 instances belonging to the test environment. The team had configured backups via EBS snapshots for these instances.\n\nWhich of the following options would you suggest to recover/rebuild the accidentally deleted AMI? (Select two)",
+        options: [
+          {
+            id: "A",
+            text: "AWS Support retains backups of AMIs. Write to the support team to get help for recovering the lost AMI",
+          },
+          {
+            id: "B",
+            text: "Create a new AMI from Amazon EBS snapshots that were created as backups",
+          },
+          {
+            id: "C",
+            text: "Create a new AMI from Amazon EC2 instances that were launched before the deletion of AMI",
+          },
+          {
+            id: "D",
+            text: "Recover the AMI from the current Amazon EC2 instances that were launched before the deletion of AMI",
+          },
+          {
+            id: "E",
+            text: "Recover the AMI from Amazon EBS snapshots that were created as backups before the deletion of AMI",
+          },
+        ],
+        correct: ["B", "C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Support does not have access to customer data and cannot recover a deregistered AMI.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "You cannot 'recover' an AMI. You can only create a new one from a running instance.",
+          },
+          E: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Similar to D, you cannot 'recover' an AMI. You create a new one from the snapshot.",
+          },
+        },
+      },
+      {
+        id: 56,
+        question:
+          "A team needs to create an AMI from their Amazon EC2 instances for use in another environment.\n\nWhat is the right way to create an application-consistent AMI from existing EC2 instances?",
+        options: [
+          { id: "A", text: "Create the AMI with `No reboot` option enabled" },
+          {
+            id: "B",
+            text: "Create an EBS-backed AMI for application consistency",
+          },
+          {
+            id: "C",
+            text: "Create the AMI by disabling the `No reboot` option",
+          },
+          {
+            id: "D",
+            text: "Create the AMI with `Delete on termination` enabled",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Enabling 'No reboot' avoids downtime, but the AMI will be crash-consistent, not application-consistent, as data cached in memory may not be flushed to disk.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "All AMIs are either EBS-backed or instance-store-backed. The type of AMI is unrelated to consistency.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "'Delete on termination' controls the behavior of the root EBS volume when the instance is terminated, not the consistency of the AMI.",
+          },
+        },
+      },
+      {
+        id: 57,
+        question:
+          "An organization has multiple AWS accounts to manage different lines of business. A user from the Finance account has to access reports stored in Amazon S3 buckets of two other AWS accounts (belonging to the HR and Audit departments) and copy these reports back to the S3 bucket in the Finance account. The user has requested the necessary permissions from the CloudOps Engineer to perform this task.\n\nAs a CloudOps Engineer, how will you configure a solution for this requirement?",
+        options: [
+          {
+            id: "A",
+            text: "Create resource-based policies in the HR, Audit accounts that will allow the requester from the Finance account to access the respective S3 buckets",
+          },
+          {
+            id: "B",
+            text: "Create resource-level permissions in the HR, Audit accounts to allow access to respective S3 buckets for the user in the Finance account",
+          },
+          {
+            id: "C",
+            text: "Create identity-based IAM policy in the Finance account that allows the user to make a request to the S3 buckets in the HR and Audit accounts. Also, create resource-based IAM policies in the HR, Audit accounts that will allow the requester from the Finance account to access the respective S3 buckets",
+          },
+          {
+            id: "D",
+            text: "Create IAM roles in the HR, Audit accounts, which can be assumed by the user from the Finance account when the user needs to access the S3 buckets of the accounts",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "A resource-based policy alone is not enough. The user in the Finance account must also have an identity-based policy that allows them to perform the S3 action.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "'Resource-level permissions' is not a policy type. You need a resource-based policy (bucket policy) to grant access to an external account.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "While IAM roles could work, using resource-based policies (bucket policies) is simpler for this use case, as it avoids the need for the user to assume a role.",
+          },
+        },
+      },
+      {
+        id: 58,
+        question:
+          "A retail company wants to get out of the business of owning and maintaining its own IT infrastructure. As part of this digital transformation, the company wants to archive about 5PB of data in its on-premises data center to durable long term storage.\n\nAs a CloudOps Engineer, what is your recommendation to migrate this data in the MOST cost-optimal way?",
+        options: [
+          {
+            id: "A",
+            text: "Transfer the on-premises data into multiple Snowball Edge Storage Optimized devices. Copy the Snowball Edge data into AWS Glacier",
+          },
+          {
+            id: "B",
+            text: "Setup AWS direct connect between the on-premises data center and AWS Cloud. Use this connection to transfer the data into AWS Glacier",
+          },
+          {
+            id: "C",
+            text: "Setup Site-to-Site VPN connection between the on-premises data center and AWS Cloud. Use this connection to transfer the data into AWS Glacier",
+          },
+          {
+            id: "D",
+            text: "Transfer the on-premises data into multiple Snowball Edge Storage Optimized devices. Copy the Snowball Edge data into Amazon S3 and create a lifecycle policy to transition the data into AWS Glacier",
+          },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Data cannot be copied directly from a Snowball Edge device into AWS Glacier. It must first be copied to an S3 bucket.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Direct Connect has high upfront costs and takes weeks to set up. It is not cost-optimal for a one-time 5PB transfer.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "A Site-to-Site VPN would be too slow for 5PB of data over the internet and is not the most cost-optimal method.",
+          },
+        },
+      },
+      {
+        id: 59,
+        question:
+          "The Chief Technology Officer (CTO) of a healthcare company realized that he does not have access to an Amazon S3 bucket present in the company's own AWS account. The CTO is the root user for the AWS account and has created other AWS users using the root user account.\n\nWhat is the reason for this behavior and how can you fix this?",
+        options: [
+          {
+            id: "A",
+            text: "If an IAM user, with full access to IAM and Amazon S3, assigns a bucket policy to an Amazon S3 bucket and doesn't specify the AWS account root user as a principal, the root user is denied access to that bucket",
+          },
+          {
+            id: "B",
+            text: "Root user always has access to all the resources of the account. The Amazon S3 bucket could be from another AWS account and the S3 bucket has been shared with the root user and hence appears in his list of S3 buckets",
+          },
+          {
+            id: "C",
+            text: "An Amazon S3 bucket policy that specifies a wildcard (*) in the principal element, sometimes is declared void by AWS to avoid the risk of complete public exposure. Such S3 buckets policies are in invalid status and have random behavior",
+          },
+          {
+            id: "D",
+            text: "Root user has access to all the resources in his AWS account. Contact AWS support to resolve the access issue",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "The root user does not have unrestricted access if a bucket policy explicitly denies them. The scenario states the bucket is in the company's own account.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is a made-up scenario. Using a wildcard principal is valid and does not invalidate the policy.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is false. A bucket policy can override root user access. AWS Support cannot override a bucket policy's explicit deny.",
+          },
+        },
+      },
+      {
+        id: 60,
+        question:
+          "A CloudOps engineer must monitor charges specifically for data transfer between AWS Regions. The engineer needs an automated alerting mechanism that notifies an email distribution list when these data transfer charges reach 75 percent of a predefined spending threshold. The solution must require minimal operational effort to set up and maintain.\n\nWhich solution should the CloudOps engineer implement to meet these requirements?",
+        options: [
+          {
+            id: "A",
+            text: "Configure AWS Cost Anomaly Detection to monitor data transfer related cost patterns. Create an anomaly subscription that notifies an Amazon Simple Notification Service (Amazon SNS) topic. Subscribe the email distribution list to the topic and treat anomaly alerts as the 75 percent early warning signal",
+          },
+          {
+            id: "B",
+            text: "Create an Amazon CloudWatch alarm for estimated charges and set the alarm threshold to 75 percent of the target amount. Publish the alarm notification to an Amazon Simple Notification Service (Amazon SNS) topic and subscribe the email distribution list to the topic",
+          },
+          {
+            id: "C",
+            text: "Schedule an AWS Lambda function to call the AWS Cost Explorer API and retrieve inter-Region data transfer costs. Compare the returned amount to 75 percent of the defined threshold and send an email to the distribution list by using Amazon Simple Email Service (Amazon SES)",
+          },
+          {
+            id: "D",
+            text: "Create a cost budget in AWS Budgets that filters to inter-Region data transfer charges. Configure an alert that triggers at 75 percent of the budgeted amount and send notifications directly to the email distribution list",
+          },
+        ],
+        correct: ["D"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Cost Anomaly Detection is for unexpected spend patterns, not for deterministic threshold-based alerts. It would not reliably trigger at exactly 75%.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "CloudWatch billing alarms are for total estimated account charges and cannot be filtered to a specific cost component like inter-Region data transfer.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This solution requires custom code, scheduling, and maintenance, which violates the 'minimal operational effort' requirement.",
+          },
+        },
+      },
+      {
+        id: 61,
+        question:
+          "A company initially used a manual process to create and manage different IAM roles needed for the organization. As the company expanded and lines of business grew, different AWS accounts were created to manage the AWS resources as well as the users. The manual process has resulted in errors with IAM roles getting created with insufficient permissions. The company is looking at automating the process of creating and managing the necessary IAM roles for multiple AWS accounts. The company already uses AWS Organizations to manage multiple AWS accounts.\n\nAs a CloudOps Engineer, can you suggest an effective way to automate this process?",
+        options: [
+          {
+            id: "A",
+            text: "Create CloudFormation templates and reuse them to create necessary IAM roles in each of the AWS accounts",
+          },
+          {
+            id: "B",
+            text: "Use CloudFormation StackSets with AWS Organizations to deploy and manage IAM roles to multiple AWS accounts simultaneously",
+          },
+          {
+            id: "C",
+            text: "Use AWS Directory Service with AWS Organizations to automatically associate necessary IAM roles with the Microsoft Active Directory users",
+          },
+          {
+            id: "D",
+            text: "Use AWS Resource Access Manager that integrates with AWS Organizations to deploy and manage shared resources across AWS accounts",
+          },
+        ],
+        correct: ["B"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Reusing templates would still require manual deployment to each account, which is not fully automated.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Managed Microsoft AD is for identity management, not for automating IAM role creation across multiple accounts.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS RAM is for sharing resources (like VPC subnets) across accounts, not for deploying identical resources into multiple accounts.",
+          },
+        },
+      },
+      {
+        id: 62,
+        question:
+          "A company hosts a web application on Amazon EC2 instances behind an Elastic Load Balancer and manages capacity by using an Auto Scaling group. The application meets performance requirements for most of the day but experiences consistent performance degradation during a predictable two hour daily traffic spike. A CloudOps engineer must improve application performance during this peak window while minimizing ongoing operational effort.\n\nWhich solution should the CloudOps engineer implement?",
+        options: [
+          {
+            id: "A",
+            text: "Increase the minimum desired capacity of the Auto Scaling group to match the number of instances required during the daily peak traffic window",
+          },
+          {
+            id: "B",
+            text: "Configure an Application Auto Scaling target tracking policy that scales on average CPU utilization and rely on reactive scaling to handle the traffic spike",
+          },
+          {
+            id: "C",
+            text: "Define a scheduled scaling action that increases the Auto Scaling group capacity shortly before the expected traffic spike and decreases capacity after the peak period ends",
+          },
+          {
+            id: "D",
+            text: "Enable predictive scaling for the Auto Scaling group and allow Amazon EC2 Auto Scaling to forecast capacity needs and adjust the group automatically",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This would keep instances running at peak capacity 24/7, which is not cost-effective.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Reactive scaling responds after the traffic spike has started, which may lead to performance degradation during the time it takes to scale out.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Predictive scaling is useful for variable patterns, but for a simple, consistent, predictable spike, scheduled scaling is the simplest and most operationally efficient solution.",
+          },
+        },
+      },
+      {
+        id: 63,
+        question:
+          "A company wants its architecture team to receive immediate email notifications whenever new Amazon EC2 instances are launched in the primary AWS production account. The notification mechanism must be event driven and require minimal ongoing maintenance.\n\nWhich solution should a CloudOps engineer implement to meet these requirements?",
+        options: [
+          {
+            id: "A",
+            text: "Create an Amazon Simple Notification Service topic with an email subscription for the architecture team. Configure an Amazon EventBridge rule that detects EC2 instance launch events and publishes the events to the SNS topic",
+          },
+          {
+            id: "B",
+            text: "Embed an email notification script in the EC2 user data that sends a message to the architecture team whenever an instance starts. Enforce the use of this user data script through a standardized EC2 build process",
+          },
+          {
+            id: "C",
+            text: "Enable AWS CloudTrail management events and configure an Amazon CloudWatch Logs metric filter to detect instance launch API calls. Create a CloudWatch alarm that sends email notifications directly to the architecture team when the metric threshold is breached",
+          },
+          {
+            id: "D",
+            text: "Configure AWS Config to record EC2 resource changes and use an AWS Config rule to detect new instances. Set up a remediation action that sends an email notification to the architecture team when a new resource is recorded",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is not event-driven in a central sense and requires maintaining a standardized build process. It can be bypassed.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is an overly complex approach using metric filters and alarms, which is not the most direct or minimal-effort method.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "AWS Config is for compliance and drift detection. Using it for real-time notifications is not its primary purpose and would be more complex than EventBridge.",
+          },
+        },
+      },
+      {
+        id: 64,
+        question:
+          'An e-commerce company runs its web application on Amazon EC2 instances backed by Amazon Elastic Block Store (Amazon EBS) volumes. An Amazon S3 bucket is used for storing sharable data. A developer has attached an Amazon EBS to an Amazon EC2 instance, but it’s still in the "attaching" state after 10-15 minutes.\n\nAs a CloudOps Engineer, what solution will you suggest to fix this issue with the EBS volume?',
+        options: [
+          {
+            id: "A",
+            text: "Check that the device name you specified when you attempted to attach the EBS volume isn't already in use. Attempt to attach the volume to the instance, again, but use a different device name",
+          },
+          {
+            id: "B",
+            text: "The EBS volume could be encrypted and the custom KMS key used to encrypt the snapshot is missing. The custom KMS key needs to be added to the volume configuration",
+          },
+          {
+            id: "C",
+            text: "Each EBS volume receives an initial I/O credit balance, an error in accumulating the credit balance can stop the volume from attaching properly to the instance. Restart the instance to fix the error",
+          },
+          {
+            id: "D",
+            text: "The `attaching` status indicates that the underlying hardware related to your EBS volume has failed. This issue cannot be fixed. Raise a service request on AWS and request for a new volume. You are not charged for volumes that are in error state",
+          },
+        ],
+        correct: ["A"],
+        distractorAnalysis: {
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "A missing KMS key would cause an 'error' state, not an 'attaching' state.",
+          },
+          C: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "This is a made-up scenario. I/O credits affect performance, not the ability to attach a volume.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Hardware failure results in an 'error' state, not 'attaching'.",
+          },
+        },
+      },
+      {
+        id: 65,
+        question:
+          "A hospitality company runs their applications on its on-premises infrastructure but stores the critical customer data on AWS Cloud using AWS Storage Gateway. At a recent audit, the company has been asked if the customer data is secure while in-transit and at rest in the Cloud.\n\nWhat is the correct answer to the auditor's question? And what should the company change to meet the security requirements?",
+        options: [
+          {
+            id: "A",
+            text: "AWS Storage Gateway uses SSL/TLS (Secure Socket Layers/Transport Layer Security) to encrypt data that is transferred between your gateway appliance and AWS storage. File and Volume Gateway data stored on Amazon S3 is encrypted. Tape Gateway data cannot be encrypted at-rest",
+          },
+          {
+            id: "B",
+            text: "AWS Storage Gateway uses IPsec to encrypt data that is transferred between your gateway appliance and AWS storage. File and Volume Gateway data stored on Amazon S3 is encrypted. Tape Gateway data cannot be encrypted at-rest",
+          },
+          {
+            id: "C",
+            text: "AWS Storage Gateway uses SSL/TLS (Secure Socket Layers/Transport Layer Security) to encrypt data that is transferred between your gateway appliance and AWS storage. By default, Storage Gateway uses Amazon S3-Managed Encryption Keys to server-side encrypt all data it stores in Amazon S3",
+          },
+          {
+            id: "D",
+            text: "AWS Storage Gateway uses IPsec to encrypt data that is transferred between your gateway appliance and AWS storage. All three Gateway types store data in encrypted form at-rest",
+          },
+        ],
+        correct: ["C"],
+        distractorAnalysis: {
+          A: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Tape Gateway data can be encrypted at rest using KMS keys.",
+          },
+          B: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Storage Gateway uses SSL/TLS for encryption in transit, not IPsec. Also, Tape Gateway data can be encrypted at rest.",
+          },
+          D: {
+            isFakeService: false,
+            isRealButWrongPurpose: true,
+            reason:
+              "Storage Gateway uses SSL/TLS for encryption in transit, not IPsec.",
+          },
+        },
+      },
+    ],
+  },
 ]

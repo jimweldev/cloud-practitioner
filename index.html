@@ -10,4 +10,71 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+  <script>
+    ;(function () {
+      const WIDGET_URL = "http://localhost:5173/widget"
+
+      // 1. Create the Fixed Container
+      const container = document.createElement("div")
+      container.id = "ai-chat-widget-container"
+      // Use flex-column-reverse to keep the button at the bottom
+      container.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 15px;
+  `
+      document.body.appendChild(container)
+
+      // 2. Create Floating Button
+      const btn = document.createElement("button")
+      btn.innerHTML = "💬"
+      btn.style.cssText = `
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #2563eb;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `
+      container.appendChild(btn)
+
+      // 3. Create Iframe
+      const iframe = document.createElement("iframe")
+      iframe.src = WIDGET_URL
+      iframe.style.cssText = `
+    display: none;
+    border: none;
+    width: 380px;
+    height: 600px;
+    max-height: 80vh;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  `
+      container.appendChild(iframe)
+
+      // Toggle Logic
+      let isOpen = false
+      btn.onclick = () => {
+        isOpen = !isOpen
+        iframe.style.display = isOpen ? "block" : "none"
+        btn.innerHTML = isOpen ? "✕" : "💬"
+
+        // Subtle pop effect
+        btn.style.transform = "scale(1.1)"
+        setTimeout(() => (btn.style.transform = "scale(1)"), 150)
+      }
+    })()
+  </script>
 </html>
